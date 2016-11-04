@@ -1,0 +1,171 @@
+.creator-container {
+    position: relative;
+    height: 95vh;
+
+    .user-creator {
+        opacity: 0;
+        height: 20em;
+        position: absolute;
+        top: 50%;
+        margin-top: -10em;
+        width: 100%;
+        min-height: 40em;
+
+        .register-form {
+            margin: 0 auto;
+            max-width: 40em;
+            text-align: center;
+            padding-bottom: 15px;
+            background-color: #353535;
+            border-radius: 2em;
+            box-shadow: 2px 5px 1px 0 rgba(0.0, 0.0, 0.0, 0.7);
+                
+            .tabs {
+                color: white;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                height: 4em;
+                padding: 0;
+                margin-bottom: 15px;
+
+                .tab1-register {
+                    display: inline-block;
+                    width: 50%;
+                    height: 48px;
+                    padding-top: 16px;
+                    border-bottom-right-radius: 5px;
+                    border-bottom: 2px solid white;
+                    border-top-left-radius: 2em;
+                    background-color: lightgray;
+                    color: #5b5b5b;
+                }
+                
+                .tab2-register {
+                    display: inline-block;
+                    width: 50%;
+                    height: 48px;
+                    padding-top: 16px;
+                    border-bottom: none;
+                    z-index: 9999;
+                    float: right;
+                    border-left: 1px solid white;
+                    color: white;
+                }
+            }
+
+            .signup {
+                color: white;
+                letter-spacing: 5px;
+                margin-top: 20px;
+                margin-bottom: 15px;
+                text-transform: uppercase
+            }
+
+            .userinfo {
+                float: none;
+
+                input {
+                    border-radius: 5px;
+
+                    &::-webkit-input-placeholder { 
+                        color: #5b5b5b;
+                        padding-left: 3px;
+                    }
+                }
+
+                .username {
+
+                    margin-bottom: .5em;
+
+                    input {
+                        margin: .5em;
+                        width: 45%;
+
+                        @media (max-width: 420px) {
+                            width: 100%;
+                        }  
+                    }
+                }
+
+                .accountinfo {
+
+                .email {
+                    padding: 0;
+
+                    input {
+                        margin-left: 8px;
+                        margin-right: 8px;
+                        width: 95%;
+
+                        @media (max-width: 420px) {
+                            width: 100%;
+                        }                            
+                    }
+                }
+
+                .password{
+                    margin: .5em 0 1em 0;
+                    padding: 0;
+
+                    input {
+                        margin: 8px;
+                        width: 45%;
+
+                            @media (max-width: 420px) {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                .confirm {
+                    margin-top: 1.3em;
+
+                    button {
+                        border: 1px solid white;
+                        border-radius: 5px;
+                        color: white;
+                        width: 9.5em;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        
+                        &:hover {
+                            background:rgba(0,0,0,0.5);
+                            transition: .4s background; 
+                        }
+                    }
+                }
+  
+                a {
+                    .confirm {
+                        margin-top: 1.3em;
+
+                        button {
+                            border: 1px solid white;
+                            border-radius: 5px;
+                            color: white;
+                            width: 9.5em;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            
+                            &:hover {
+                                background:rgba(0,0,0,0.5);
+                                transition: .4s background; 
+                            }
+                        }
+                    }
+
+                    h6 {
+                        margin-top: 20px;
+                        letter-spacing: 1px;
+                        font-size: 12px;
+                        color: lightblue;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }   
+        }
+    }
+}

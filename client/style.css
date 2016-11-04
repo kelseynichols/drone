@@ -1,0 +1,687 @@
+.navbar {
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+}
+.navbar .nav-fluid {
+  transition: 0.2s all linear;
+}
+.navbar img {
+  height: 2.9em;
+  margin-top: -3px;
+  margin-left: .5em;
+}
+.navbar img:hover {
+  height: 3em;
+}
+.change-color {
+  background-color: #1b1b1b;
+  -webkit-box-shadow: 0px 0px 4px 0px #dddddd;
+  -moz-box-shadow: 0px 0px 4px 0px #dddddd;
+  box-shadow: 0px 0px 4px 0px #dddddd;
+  color: white;
+}
+.navbar-fixed-top {
+  min-height: 80px;
+}
+.navbar-nav > li > a {
+  margin-right: 1.5em;
+  letter-spacing: 1px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  line-height: 80px;
+}
+.navbar-nav > li > a:hover {
+  border-bottom: 4px solid dimgrey;
+  line-height: 76px;
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  .navbar-nav > li > a {
+    line-height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+.navbar-toggle {
+  margin: 2rem;
+}
+.welcome-container {
+  position: relative;
+  text-align: center;
+}
+video {
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade {
+  opacity: .5;
+}
+#vid {
+  font-weight: 100;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 2rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 170px 0 0 -140px;
+}
+#vid h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: 5px;
+}
+#vid p {
+  font-size: 19px;
+  letter-spacing: 1px;
+}
+#vid .howitworks {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.5);
+  padding: .5rem;
+  transition: .6s background;
+  font-size: 1.4em;
+  letter-spacing: 2px;
+  border: 1px solid white;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin: 7px;
+  padding: 3px 15px 3px 15px;
+}
+#vid .howitworks:hover {
+  text-decoration: none;
+  color: white;
+  background: rgba(225, 225, 225, 0.5);
+  font-size: 1.45em;
+}
+#vid button {
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none;
+  margin: 1rem auto;
+  font-size: 1.3rem;
+  background: rgba(255, 255, 255, 0.23);
+  color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: .3s background;
+  padding: 3px 15px 3px 15px;
+}
+#vid button:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+.creator-container {
+  position: relative;
+  height: 95vh;
+}
+.creator-container .user-creator {
+  opacity: 0;
+  height: 20em;
+  position: absolute;
+  top: 50%;
+  margin-top: -10em;
+  width: 100%;
+  min-height: 40em;
+}
+.creator-container .user-creator .register-form {
+  margin: 0 auto;
+  max-width: 40em;
+  text-align: center;
+  padding-bottom: 15px;
+  background-color: #353535;
+  border-radius: 2em;
+  box-shadow: 2px 5px 1px 0 rgba(0, 0, 0, 0.7);
+}
+.creator-container .user-creator .register-form .tabs {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  height: 4em;
+  padding: 0;
+  margin-bottom: 15px;
+}
+.creator-container .user-creator .register-form .tabs .tab1-register {
+  display: inline-block;
+  width: 50%;
+  height: 48px;
+  padding-top: 16px;
+  border-bottom-right-radius: 5px;
+  border-bottom: 2px solid white;
+  border-top-left-radius: 2em;
+  background-color: lightgray;
+  color: #5b5b5b;
+}
+.creator-container .user-creator .register-form .tabs .tab2-register {
+  display: inline-block;
+  width: 50%;
+  height: 48px;
+  padding-top: 16px;
+  border-bottom: none;
+  z-index: 9999;
+  float: right;
+  border-left: 1px solid white;
+  color: white;
+}
+.creator-container .user-creator .register-form .signup {
+  color: white;
+  letter-spacing: 5px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+.creator-container .user-creator .register-form .userinfo {
+  float: none;
+}
+.creator-container .user-creator .register-form .userinfo input {
+  border-radius: 5px;
+}
+.creator-container .user-creator .register-form .userinfo input::-webkit-input-placeholder {
+  color: #5b5b5b;
+  padding-left: 3px;
+}
+.creator-container .user-creator .register-form .userinfo .username {
+  margin-bottom: .5em;
+}
+.creator-container .user-creator .register-form .userinfo .username input {
+  margin: .5em;
+  width: 45%;
+}
+@media (max-width: 420px) {
+  .creator-container .user-creator .register-form .userinfo .username input {
+    width: 100%;
+  }
+}
+.creator-container .user-creator .register-form .userinfo .accountinfo .email {
+  padding: 0;
+}
+.creator-container .user-creator .register-form .userinfo .accountinfo .email input {
+  margin-left: 8px;
+  margin-right: 8px;
+  width: 95%;
+}
+@media (max-width: 420px) {
+  .creator-container .user-creator .register-form .userinfo .accountinfo .email input {
+    width: 100%;
+  }
+}
+.creator-container .user-creator .register-form .userinfo .accountinfo .password {
+  margin: .5em 0 1em 0;
+  padding: 0;
+}
+.creator-container .user-creator .register-form .userinfo .accountinfo .password input {
+  margin: 8px;
+  width: 45%;
+}
+@media (max-width: 420px) {
+  .creator-container .user-creator .register-form .userinfo .accountinfo .password input {
+    width: 100%;
+  }
+}
+.creator-container .user-creator .register-form .userinfo .confirm {
+  margin-top: 1.3em;
+}
+.creator-container .user-creator .register-form .userinfo .confirm button {
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  width: 9.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.creator-container .user-creator .register-form .userinfo .confirm button:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transition: .4s background;
+}
+.creator-container .user-creator .register-form .userinfo a .confirm {
+  margin-top: 1.3em;
+}
+.creator-container .user-creator .register-form .userinfo a .confirm button {
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  width: 9.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.creator-container .user-creator .register-form .userinfo a .confirm button:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transition: .4s background;
+}
+.creator-container .user-creator .register-form .userinfo a h6 {
+  margin-top: 20px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: lightblue;
+}
+.creator-container .user-creator .register-form .userinfo a h6:hover {
+  text-decoration: none;
+}
+.route-command {
+  float: left;
+}
+.route-amount {
+  float: left;
+  margin-left: 50px;
+}
+.route-buttons {
+  margin-top: 100px;
+  float: left;
+}
+.buildingroutediv {
+  height: 300px;
+  width: 300px;
+  background-color: white;
+  float: right;
+  margin-bottom: 200px;
+  margin-right: 200px;
+}
+.creator-container {
+  position: relative;
+  height: 95vh;
+}
+.creator-container .user-creator-login {
+  opacity: 0;
+  height: 20em;
+  position: absolute;
+  top: 50%;
+  margin-top: -10em;
+  width: 100%;
+  min-height: 40em;
+}
+.creator-container .user-creator-login .login-form {
+  background-color: #353535;
+  max-width: 40em;
+  text-align: center;
+  border-radius: 2em;
+  margin: 0 auto;
+  padding-bottom: 15px;
+  box-shadow: 2px 5px 1px 0 rgba(0, 0, 0, 0.7);
+}
+.creator-container .user-creator-login .login-form .tabs-login {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  height: 4em;
+  padding: 0;
+  margin-bottom: 15px;
+}
+.creator-container .user-creator-login .login-form .tabs-login .tab1 {
+  display: inline-block;
+  width: 50%;
+  border-right: 1px solid white;
+  height: 48px;
+  padding-top: 16px;
+  border-bottom: none;
+  color: white;
+  float: left;
+}
+.creator-container .user-creator-login .login-form .tabs-login .tab2 {
+  display: inline-block;
+  width: 50%;
+  height: 48px;
+  padding-top: 16px;
+  border-bottom-left-radius: 5px;
+  border-bottom: 2px solid white;
+  border-top-right-radius: 2em;
+  background-color: lightgray;
+  color: #5b5b5b;
+}
+.creator-container .user-creator-login .login-form .signup-login {
+  color: white;
+  letter-spacing: 5px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+}
+.creator-container .user-creator-login .login-form .userinfo input {
+  border-radius: 5px;
+}
+.creator-container .user-creator-login .login-form .userinfo input::-webkit-input-placeholder {
+  color: #5b5b5b;
+  padding-left: 3px;
+}
+.creator-container .user-creator-login .login-form .userinfo .username {
+  margin-bottom: .5em;
+}
+.creator-container .user-creator-login .login-form .userinfo .username input {
+  margin: .5em;
+  width: 45%;
+}
+.creator-container .user-creator-login .login-form .userinfo .accountinfo {
+  margin: 0 auto;
+}
+.creator-container .user-creator-login .login-form .userinfo .accountinfo .email input {
+  width: 95%;
+}
+.creator-container .user-creator-login .login-form .userinfo .accountinfo .password-login {
+  margin: .5em 0 1em 0;
+}
+.creator-container .user-creator-login .login-form .userinfo .accountinfo .password-login input {
+  margin: 8px;
+  width: 95%;
+}
+.creator-container .user-creator-login .login-form .userinfo .confirm {
+  margin-top: 2em;
+}
+.creator-container .user-creator-login .login-form .userinfo .confirm button {
+  border-radius: 5px;
+  color: white;
+  width: 9.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.creator-container .user-creator-login .login-form .userinfo .confirm button:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transition: .4s background;
+}
+.creator-container .user-creator-login .login-form .userinfo a:hover {
+  text-decoration: none;
+}
+.creator-container .user-creator-login .login-form .userinfo h6 {
+  margin-top: 20px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: lightblue;
+}
+.contact-container {
+  position: relative;
+  min-height: 80vh;
+}
+@media (max-width: 990px) {
+  .contact-container {
+    max-width: 50em;
+  }
+}
+.contact-container .contact-row {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  height: 20em;
+  margin-top: -10em;
+  width: 100%;
+}
+.contact-container .contact-row .contact-form-row .cu {
+  margin: 23px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.contact-container .contact-row .contact-form-row .contact-form {
+  height: 27em;
+  background-color: #1b1b1c;
+  text-align: center;
+  padding-top: 1em;
+  border-radius: 2em;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+}
+@media (max-width: 1000px) {
+  .contact-container .contact-row .contact-form-row .contact-form {
+    margin-bottom: 2em;
+  }
+}
+.contact-container .contact-row .contact-form-row .contact-form input {
+  width: 80%;
+  margin-bottom: 1.2em;
+  height: 2em;
+  border-radius: 5px;
+}
+.contact-container .contact-row .contact-form-row .contact-form input::-webkit-input-placeholder {
+  color: #5b5b5b;
+  padding-left: 3px;
+}
+.contact-container .contact-row .contact-form-row .contact-form textarea {
+  width: 80%;
+  height: 7em;
+  margin-bottom: 1.8em;
+  border-radius: 5px;
+}
+.contact-container .contact-row .contact-form-row .contact-form textarea::-webkit-input-placeholder {
+  color: #5b5b5b;
+  padding-left: 3px;
+  padding-top: 5px;
+}
+.contact-container .contact-row .contact-form-row .contact-form button {
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+  width: 9.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.contact-container .contact-row .contact-form-row .contact-form button:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transition: .4s background;
+}
+.contact-container .contact-row .map {
+  border-radius: 2em;
+}
+.contact-container .contact-row .map .map-box {
+  height: 27em;
+  background-image: url('../images/bhammap.png');
+  background-size: cover;
+  background-position: -5px;
+  border: 1px solid #1b1b1c;
+  -webkit-filter: grayscale(100%);
+  /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+.account-body {
+  background: rgba(0, 0, 0, 0.5);
+}
+h1 {
+  color: white;
+}
+.info-page {
+  background-color: white;
+}
+.pics {
+  margin-bottom: 20em;
+}
+@media (max-width: 990px) {
+  .pics {
+    margin-bottom: 3em;
+  }
+}
+.pics .pic-row {
+  margin-top: 7em;
+}
+@media (max-width: 990px) {
+  .pics .pic-row {
+    margin-top: 3em;
+  }
+}
+@media (max-width: 990px) {
+  .pics .pic-row .pic-container {
+    margin-bottom: 3em;
+  }
+}
+.pics .pic-row .pic-container .square1 {
+  width: 98%;
+  background-image: url('/images/binary.jpg');
+  height: 36em;
+  background-size: cover;
+  background-position: center;
+  border-radius: .5em;
+  cursor: pointer;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+@media (max-width: 770px) {
+  .pics .pic-row .pic-container .square1 {
+    height: 19em;
+  }
+}
+.pics .pic-row .pic-container .text1 {
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: absolute;
+  top: 0;
+  left: 13;
+  bottom: 0;
+  display: none;
+  border-radius: .5em;
+  cursor: pointer;
+}
+.pics .pic-row .pic-container .text1 h1 {
+  text-align: center;
+  color: white;
+  padding-top: 3.5em;
+  padding-bottom: 3.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+@media (max-width: 770px) {
+  .pics .pic-row .pic-container .text1 {
+    height: 19em;
+    margin: 0 auto;
+  }
+}
+.pics .pic-row .pic-container .square2 {
+  width: 98%;
+  background-image: url('/images/blackandwhitedrone.jpg');
+  height: 36em;
+  background-size: cover;
+  background-position: center;
+  border-radius: .5em;
+  cursor: pointer;
+}
+@media (max-width: 770px) {
+  .pics .pic-row .pic-container .square2 {
+    height: 19em;
+  }
+}
+.explanation {
+  margin-top: 6em;
+}
+@media (max-width: 990px) {
+  .explanation {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+.explanation .software-container {
+  width: 100%;
+}
+@media (max-width: 990px) {
+  .explanation .software-container {
+    width: 75%;
+    border-radius: 2em;
+  }
+}
+.explanation .software-container .software-section {
+  padding-top: 6.5em;
+  padding-bottom: 6.5em;
+  background-color: white;
+  margin-bottom: 13em;
+}
+@media (max-width: 990px) {
+  .explanation .software-container .software-section {
+    min-height: 35em;
+    border-radius: 2em;
+    margin-bottom: 3em;
+  }
+}
+.explanation .software-container .software-section .text-container .about-container .square {
+  width: 100%;
+  text-align: center;
+}
+.explanation .software-container .software-section .text-container .about-container .square .glyph-container .glyphicon {
+  font-size: 2em;
+  padding: 0.5em 0.5em;
+  color: lightblue;
+  margin-right: 20px;
+}
+.explanation .software-container .software-section .text-container .about-container .square .text-container h4 {
+  text-align: center;
+  color: black;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+.explanation .software-container .software-section .text-container .about-container .square .text-container p {
+  text-align: center;
+  color: #1b1b1b;
+  font-size: 1em;
+}
+.explanation .hardwares {
+  padding-bottom: 2em;
+}
+.explanation .hardwares .pic-row {
+  margin-top: 7em;
+}
+@media (max-width: 990px) {
+  .explanation .hardwares .pic-row {
+    margin-top: 3em;
+  }
+}
+@media (max-width: 990px) {
+  .explanation .hardwares .pic-row .pic-container {
+    margin-bottom: 3em;
+  }
+}
+.explanation .hardwares .pic-row .pic-container .square1 {
+  width: 100%;
+  background-image: url('/images/bebop.jpg');
+  height: 15em;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1em;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+@media (max-width: 750px) {
+  .explanation .hardwares .pic-row .pic-container .square1 {
+    max-width: 40em;
+    margin: 0 auto;
+  }
+}
+.explanation .hardwares .pic-row .pic-container .square2 {
+  height: 19em;
+  color: #1b1b1b;
+  line-height: 25px;
+  font-size: 16px;
+  width: 95%;
+  margin-left: 25px;
+}
+@media (max-width: 990px) {
+  .explanation .hardwares .pic-row .pic-container .square2 {
+    height: 8em;
+    text-align: center;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+.site-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 70px;
+  background-image: url('../images/drone3.png');
+}
+body {
+  background-color: #f2f2f2;
+}

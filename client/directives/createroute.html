@@ -1,0 +1,37 @@
+<div class="input-route">
+    <select name="buildings" id="#" ng-model="selectedBuilding" ng-change="changeBuilding()">
+        <option value="">Select Building</option>
+        <option value="{{building}}" ng-repeat="building in buildings">{{ building.buildingName }}</option>
+    </select>
+    <select name="commands" id="" ng-model="selectedCommand">
+        <option value="">Select Command</option>
+        <option value="Forward">Forward</option>
+        <option value="Backward">Backward</option>
+        <option value="Up">Up</option>
+        <option value="Down">Down</option>
+        <option value="Left">Left</option>
+        <option value="Right">Right</option>
+        <option value="Clockwise">Clockwise</option>
+        <option value="CounterClockwise">Counter-Clockwise</option>
+        <option value="TakePicture">Take Picture</option>
+        <option value="StartRecord">Start Record</option>
+        <option value="StopRecord">Stop Record</option>
+    </select>
+    <input type="number" ng-model="inputAmount" placeholder="amount">
+    <button ng-click="addRoute()">Add</button>
+    <div class="buildingroutediv"></div>
+</div>
+<div class="current-route">
+    <div class="route-command">
+        <h3>Command</h3>
+        <p ng-repeat="command in routeCommands track by $index">{{ command.command }}</p>
+    </div>
+    <div class="route-amount">
+        <h3>Amount</h3>
+        <p ng-repeat="command in routeCommands track by $index">{{ command.amount }}</p>
+    </div>
+</div>
+<div class="route-buttons">
+    <button ng-click="submitRoute()">Submit</button>
+    <button ng-click="clearRoute()">Clear Route</button>
+</div>

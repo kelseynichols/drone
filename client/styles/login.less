@@ -1,0 +1,139 @@
+.creator-container {
+    position: relative;
+    height: 95vh;
+
+    .user-creator-login {
+        opacity: 0;
+        height: 20em;
+        position: absolute;
+        top: 50%;
+        margin-top: -10em;
+        width: 100%;
+        min-height: 40em;
+
+        .login-form {
+            background-color: #353535;
+            max-width: 40em;
+            text-align: center;
+            border-radius: 2em;
+            margin: 0 auto;
+            padding-bottom: 15px;
+            box-shadow: 2px 5px 1px 0 rgba(0.0, 0.0, 0.0, 0.7);
+
+            .tabs-login {
+                color: white;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                height: 4em;
+                padding:0;
+                margin-bottom: 15px;
+
+                .tab1 {
+                    display: inline-block;
+                    width: 50%;
+                    padding-top: 16px;
+                    border-right: 1px solid white;
+                    height: 48px;
+                    padding-top: 16px;
+                    border-bottom: none;
+                    color: white;
+                    float: left;
+                }
+                
+                .tab2 {
+                    display: inline-block;
+                    width: 50%;
+                    height: 48px;
+                    padding-top: 16px;
+                    border-bottom-left-radius: 5px;
+                    border-bottom: 2px solid white;
+                    border-top-right-radius: 2em;
+                    background-color: lightgray;
+                    color: #5b5b5b;
+                }
+            }
+
+            .signup-login {
+                color: white;
+                letter-spacing: 5px;
+                margin-top: 35px;
+                margin-bottom: 35px;
+                text-transform: uppercase
+            }
+
+            .userinfo {
+
+                input {
+                    border-radius: 5px;
+
+                    &::-webkit-input-placeholder { 
+                        color: #5b5b5b;
+                        padding-left: 3px;
+                    }
+                }
+                
+                .username {
+                    margin-bottom: .5em;
+
+                    input {
+                        margin: .5em;
+                        width: 45%;
+                    }
+                }
+
+                .accountinfo {
+                    // width: 70%;
+                    margin: 0 auto;
+
+                    .email {
+                        
+                        input {
+                            width: 95%;
+                        }
+                    }
+
+                    .password-login{
+                        margin: .5em 0 1em 0;
+
+                        input {
+                            margin: 8px;
+                            width: 95%;
+                        }
+                    }
+                }
+
+                .confirm {
+                    margin-top: 2em;
+
+                    button {
+                        // border: 1px solid white;
+                        border-radius: 5px;
+                        color: white;
+                        width: 9.5em;
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        
+                        &:hover {
+                            background:rgba(0,0,0,0.5);
+                            transition: .4s background; 
+                        }
+                    }
+                }
+
+                a {
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                h6 {
+                    margin-top: 20px;
+                    letter-spacing: 1px;
+                    font-size: 12px;
+                    color: lightblue;
+
+                }
+            }
+        }
+    }
+}

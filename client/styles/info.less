@@ -1,0 +1,197 @@
+.info-page {
+    // background: rgba(250,250,250,0.75);
+    background-color: white;
+}
+.pics {
+    margin-bottom: 20em;
+
+        @media (max-width: 990px) {
+            margin-bottom: 3em;
+        } 
+
+    .pic-row {
+        margin-top: 7em;
+
+        @media (max-width: 990px) {
+            margin-top: 3em;
+        } 
+
+        .pic-container {
+                @media (max-width: 990px) {
+                    margin-bottom: 3em;
+                }  
+                
+
+            .square1 {
+                width: 98%;
+                background-image: url('/images/binary.jpg');
+                height: 36em;
+                background-size: cover;
+                background-position: center;
+                border-radius: .5em;
+                cursor: pointer;
+                -webkit-filter: grayscale(100%); 
+                filter: grayscale(100%);
+
+                @media (max-width: 770px) {
+                    height: 19em;
+                } 
+            }
+            
+            .text1 {
+                width: 95%;
+                background-color: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 0;
+                left: 13;
+                bottom: 0;
+                display: none;
+                border-radius: .5em;
+                cursor: pointer;
+
+                h1 {
+                    text-align: center;
+                    color: white;
+                    padding-top: 3.5em;
+                    padding-bottom: 3.5em;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }  
+
+                @media (max-width: 770px) {
+                    height: 19em;
+                    margin: 0 auto;
+                } 
+            }
+
+            .square2 {
+                    width: 98%;
+                    background-image: url('/images/blackandwhitedrone.jpg');
+                    height: 36em;
+                    background-size: cover;
+                    background-position: center;
+                    border-radius: .5em;
+                    cursor: pointer;
+
+                @media (max-width: 770px) {
+                    height: 19em;
+
+                } 
+            }
+        }
+    }
+}
+
+.explanation {
+    margin-top: 6em;
+
+    
+    @media (max-width: 990px) {
+        margin-bottom: 0;
+        margin-top: 0;
+    } 
+
+    .software-container {
+        width: 100%;
+
+        @media (max-width: 990px) {
+            width: 75%;
+            border-radius: 2em;
+        } 
+
+        .software-section {
+            padding-top: 6.5em;
+            padding-bottom: 6.5em;
+            background-color: white;
+            margin-bottom: 13em;
+
+                @media (max-width: 990px) {
+                    min-height: 35em;
+                    border-radius: 2em;
+                    margin-bottom: 3em;
+                } 
+
+            .text-container {
+
+                .about-container {
+
+                    .square {
+                        width: 100%;
+                        text-align: center;
+
+                        .glyph-container {
+                            .glyphicon {
+                                font-size: 2em;
+                                padding: 0.5em 0.5em;
+                                color: lightblue;
+                                margin-right: 20px;
+                            }
+                        }
+                        .text-container {
+                            h4 {
+                                text-align: center;
+                                color: black;
+                                font-size: 1em;
+                                text-transform: uppercase;
+                            }
+                            p {
+                                text-align: center;
+                                color: #1b1b1b;
+                                font-size: 1em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .hardwares {
+        padding-bottom: 2em;
+
+        .pic-row {
+            margin-top: 7em;
+
+            @media (max-width: 990px) {
+                margin-top: 3em;
+            } 
+
+            .pic-container {
+                    @media (max-width: 990px) {
+                        margin-bottom: 3em;
+                    }  
+
+                .square1 {
+                    width: 100%;
+                    background-image: url('/images/bebop.jpg');
+                    height: 15em;
+                    background-size: cover;
+                    background-position: center;
+                    border-radius: 1em;
+                    -webkit-filter: grayscale(100%); 
+                    filter: grayscale(100%);
+                
+                    
+                    @media (max-width: 750px) {
+                        max-width: 40em;
+                        margin: 0 auto;
+                    } 
+                }
+
+                .square2 {
+                    height: 19em;
+                    color: #1b1b1b;
+                    line-height: 25px;
+                    font-size: 16px;
+                    width: 95%;
+                    margin-left: 25px;
+
+                    @media (max-width: 990px) {
+                        height: 8em;
+                        text-align: center;
+                    } 
+                }
+            }
+        }
+    }
+}

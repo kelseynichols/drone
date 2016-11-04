@@ -1,0 +1,32 @@
+{
+  "name": "flap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "nodemon -e js,less --exec \"source .variables && lessc client/styles/main.less client/style.css && node server/index.js\"",
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gperanich/flap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gperanich/flap/issues"
+  },
+  "homepage": "https://github.com/gperanich/flap#readme",
+  "dependencies": {
+    "aws-iot-device-sdk": "^1.0.13",
+    "aws-sdk": "^2.6.12"
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-mysql-session": "^1.2.0",
+    "express-session": "^1.14.2",
+    "mysql": "^2.11.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  }
+}
