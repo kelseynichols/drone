@@ -1,11 +1,165 @@
 .account-body {
     background:rgba(0,0,0,0.5);
-}
-h1 {
-    color: white;
+
+    .buildings-container {
+        color: white;
+
+        h1 {
+            text-align: center;
+            margin: 1em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .building-list {
+            background-color: white;
+            min-height: 5em;
+            width: 30%;
+            margin: 0 1em 2em 1em;
+            border-radius: 2em;
+            padding-top: 1em;
+            text-align: center;
+
+                @media (max-width: 1200px) {
+                    width: 47%;
+                }   
+
+                @media (max-width: 991px) {
+                    width: 98%;
+                }                   
+            
+            .buildingz {
+                color: #1b1b1b;
+                padding-right: 1em;
+                display: inline-block;
+            }
+
+            .detail-view {
+                display: inline-block;
+
+                .detailz {
+                    margin-right: 1em;
+                }
+            }
+
+            .building-details {
+                
+                .thumb-photo {
+                    background-color: black;
+
+                    canvas {
+                        margin-left: -6em;
+                    }
+                }
+
+                .caption {
+                    width: 65%;
+                    margin: 0 auto;
+
+                    h4 {
+                        text-transform: uppercase;
+                        display: inline-block;
+                        margin-bottom: 0;
+                    }
+
+                    p {
+                        display: inline-block;
+                        font-weight: bold;
+                        font-size: 1.7em;
+                        padding-left: 15px;
+                        letter-spacing: 1px;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .singleroute-div {
+                    // background-color: yellow;
+                    width: 65%;
+                    margin: 0 auto;
+                    text-align: center;
+
+                    h3 {
+                        color: lightblue;
+                        letter-spacing: 2px;
+                        
+                    }
+                    
+                    .commands {
+                        // background-color: brown;
+                        color: black;
+
+                        h4 {
+                            text-transform: uppercase;
+                            display: inline-block;
+                            margin-bottom: 0;
+                        }
+
+                        p {
+                            display: inline-block;
+                            font-weight: bold;
+                            font-size: 1.7em;
+                            padding-left: 15px;
+                            letter-spacing: 1px;
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 // .shape-div {
 //     height: 300px;
 //     width: 300px;
 //     background-color: white;
 // }
+
+.create-container {
+    background-color: purple;
+    padding-top: 1em;
+
+
+    .building-btn {
+        background-color: blue;
+
+        @media (max-width: 770px) {
+            // float: none;
+            text-align: center;
+        }         
+
+        .create-building {
+
+            button {
+                text-transform: uppercase;
+                float: right;
+                letter-spacing: 2px;
+
+                @media (max-width: 770px) {
+                    float: none;
+                    text-align: center;
+                } 
+            }
+        }
+    }
+
+    .two {
+        background-color: green;
+
+            @media (max-width: 770px) {
+                // float: none;
+                text-align: center;
+            }  
+        .create-route {
+
+            button {
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                    @media (max-width: 770px) {
+                        float: none;
+                        text-align: center;
+                        margin-top: 10px;
+                    } 
+            }
+        }
+    }
+}

@@ -1,9 +1,10 @@
 .info-page {
-    // background: rgba(250,250,250,0.75);
-    background-color: white;
+background-color: rgba(255, 255, 255, 0.8); 
+opacity: 0; 
+
 }
 .pics {
-    margin-bottom: 20em;
+    margin-bottom: 19em;
 
         @media (max-width: 990px) {
             margin-bottom: 3em;
@@ -11,6 +12,7 @@
 
     .pic-row {
         margin-top: 7em;
+        // background-color: #e2e2e2;
 
         @media (max-width: 990px) {
             margin-top: 3em;
@@ -21,11 +23,10 @@
                     margin-bottom: 3em;
                 }  
                 
-
             .square1 {
-                width: 98%;
+                width: 100%;
                 background-image: url('/images/binary.jpg');
-                height: 36em;
+                height: 24em;
                 background-size: cover;
                 background-position: center;
                 border-radius: .5em;
@@ -40,7 +41,7 @@
             
             .text1 {
                 width: 95%;
-                background-color: rgba(0, 0, 0, 0.9);
+                background-color:rgba(19, 15, 15, 0.92);
                 position: absolute;
                 top: 0;
                 left: 13;
@@ -65,13 +66,14 @@
             }
 
             .square2 {
-                    width: 98%;
+                    width: 100%;
                     background-image: url('/images/blackandwhitedrone.jpg');
-                    height: 36em;
+                    height: 24em;
                     background-size: cover;
                     background-position: center;
                     border-radius: .5em;
                     cursor: pointer;
+                    border: 1px solid grey;
 
                 @media (max-width: 770px) {
                     height: 19em;
@@ -93,20 +95,24 @@
 
     .software-container {
         width: 100%;
+        margin-bottom: 5em;
 
         @media (max-width: 990px) {
-            width: 75%;
-            border-radius: 2em;
+            // width: 75%;
+            // border-radius: 2em;
         } 
 
         .software-section {
-            padding-top: 6.5em;
-            padding-bottom: 6.5em;
-            background-color: white;
+            padding-top: 2.5em;
+            padding-bottom: 3.5em;
+            // background-color: white;
+            background-color: rgba(0, 0, 0, 0.65);
+            // background-color:rgba(19, 15, 15, 0.92);
+
             margin-bottom: 13em;
 
                 @media (max-width: 990px) {
-                    min-height: 35em;
+                    min-height: 40em;
                     border-radius: 2em;
                     margin-bottom: 3em;
                 } 
@@ -121,23 +127,26 @@
 
                         .glyph-container {
                             .glyphicon {
-                                font-size: 2em;
+                                font-size: 3em;
                                 padding: 0.5em 0.5em;
                                 color: lightblue;
-                                margin-right: 20px;
+                                // margin-right: 20px;
                             }
                         }
                         .text-container {
                             h4 {
                                 text-align: center;
-                                color: black;
-                                font-size: 1em;
+                                color: white;
+                                font-size: 2.5em;
+                                letter-spacing: 10px;
                                 text-transform: uppercase;
                             }
                             p {
                                 text-align: center;
-                                color: #1b1b1b;
-                                font-size: 1em;
+                                color: white;
+                                letter-spacing: 1px;
+                                font-size: 15px;
+                                padding: 25px 25px 0 25px;
                             }
                         }
                     }
@@ -148,22 +157,32 @@
 
     .hardwares {
         padding-bottom: 2em;
-
-        .pic-row {
-            margin-top: 7em;
+        background-color: rgba(0, 0, 0, 0.92);
+        width: 100%;
 
             @media (max-width: 990px) {
-                margin-top: 3em;
+                // min-height: 31em;
             } 
+
+        .pic-row {
+            margin-top: 6em;
+
+            @media (max-width: 990px) {
+                margin-top: 1em;
+            } 
+            @media (max-width: 680px) {
+                margin-top: 1em;
+            }
 
             .pic-container {
                     @media (max-width: 990px) {
                         margin-bottom: 3em;
+                        margin-top: 3em;
                     }  
 
                 .square1 {
                     width: 100%;
-                    background-image: url('/images/bebop.jpg');
+                    background-image: url('/images/bebop2_blanc.png');
                     height: 15em;
                     background-size: cover;
                     background-position: center;
@@ -179,16 +198,30 @@
                 }
 
                 .square2 {
-                    height: 19em;
+                    // height: 16em;
                     color: #1b1b1b;
-                    line-height: 25px;
-                    font-size: 16px;
-                    width: 95%;
+                    line-height: 28px;
+                    font-size: 17px;
+                    width: 85%;
                     margin-left: 25px;
 
+                        @media (max-width: 700px) {
+                            margin-top: 2em;
+                            width: 98%;
+                        } 
+
+                    p {
+                        color: white;
+                        letter-spacing: 1px;
+
+                    }
+
                     @media (max-width: 990px) {
-                        height: 8em;
+                        // height: 8em;
                         text-align: center;
+                    } 
+                    @media (max-width: 640px) {
+                        width: 90%;
                     } 
                 }
             }

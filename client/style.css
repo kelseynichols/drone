@@ -291,6 +291,7 @@ video {
   width: 300px;
   background-color: white;
   float: right;
+  margin-top: 50px;
   margin-bottom: 200px;
   margin-right: 200px;
 }
@@ -404,7 +405,7 @@ video {
 }
 .contact-container {
   position: relative;
-  min-height: 80vh;
+  min-height: 95vh;
 }
 @media (max-width: 990px) {
   .contact-container {
@@ -478,7 +479,6 @@ video {
 }
 .contact-container .contact-row .map .map-box {
   height: 27em;
-  background-image: url('../images/bhammap.png');
   background-size: cover;
   background-position: -5px;
   border: 1px solid #1b1b1c;
@@ -489,14 +489,141 @@ video {
 .account-body {
   background: rgba(0, 0, 0, 0.5);
 }
-h1 {
+.account-body .buildings-container {
   color: white;
 }
-.info-page {
+.account-body .buildings-container h1 {
+  text-align: center;
+  margin: 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.account-body .buildings-container .building-list {
   background-color: white;
+  min-height: 5em;
+  width: 30%;
+  margin: 0 1em 2em 1em;
+  border-radius: 2em;
+  padding-top: 1em;
+  text-align: center;
+}
+@media (max-width: 1200px) {
+  .account-body .buildings-container .building-list {
+    width: 47%;
+  }
+}
+@media (max-width: 991px) {
+  .account-body .buildings-container .building-list {
+    width: 98%;
+  }
+}
+.account-body .buildings-container .building-list .buildingz {
+  color: #1b1b1b;
+  padding-right: 1em;
+  display: inline-block;
+}
+.account-body .buildings-container .building-list .detail-view {
+  display: inline-block;
+}
+.account-body .buildings-container .building-list .detail-view .detailz {
+  margin-right: 1em;
+}
+.account-body .buildings-container .building-list .building-details .thumb-photo {
+  background-color: black;
+}
+.account-body .buildings-container .building-list .building-details .thumb-photo canvas {
+  margin-left: -6em;
+}
+.account-body .buildings-container .building-list .building-details .caption {
+  width: 65%;
+  margin: 0 auto;
+}
+.account-body .buildings-container .building-list .building-details .caption h4 {
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 0;
+}
+.account-body .buildings-container .building-list .building-details .caption p {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.7em;
+  padding-left: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+.account-body .buildings-container .building-list .building-details .singleroute-div {
+  width: 65%;
+  margin: 0 auto;
+  text-align: center;
+}
+.account-body .buildings-container .building-list .building-details .singleroute-div h3 {
+  color: lightblue;
+  letter-spacing: 2px;
+}
+.account-body .buildings-container .building-list .building-details .singleroute-div .commands {
+  color: black;
+}
+.account-body .buildings-container .building-list .building-details .singleroute-div .commands h4 {
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 0;
+}
+.account-body .buildings-container .building-list .building-details .singleroute-div .commands p {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.7em;
+  padding-left: 15px;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+.create-container {
+  background-color: purple;
+  padding-top: 1em;
+}
+.create-container .building-btn {
+  background-color: blue;
+}
+@media (max-width: 770px) {
+  .create-container .building-btn {
+    text-align: center;
+  }
+}
+.create-container .building-btn .create-building button {
+  text-transform: uppercase;
+  float: right;
+  letter-spacing: 2px;
+}
+@media (max-width: 770px) {
+  .create-container .building-btn .create-building button {
+    float: none;
+    text-align: center;
+  }
+}
+.create-container .two {
+  background-color: green;
+}
+@media (max-width: 770px) {
+  .create-container .two {
+    text-align: center;
+  }
+}
+.create-container .two .create-route button {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+@media (max-width: 770px) {
+  .create-container .two .create-route button {
+    float: none;
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+.info-page {
+  background-color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
 }
 .pics {
-  margin-bottom: 20em;
+  margin-bottom: 19em;
 }
 @media (max-width: 990px) {
   .pics {
@@ -517,9 +644,9 @@ h1 {
   }
 }
 .pics .pic-row .pic-container .square1 {
-  width: 98%;
+  width: 100%;
   background-image: url('/images/binary.jpg');
-  height: 36em;
+  height: 24em;
   background-size: cover;
   background-position: center;
   border-radius: .5em;
@@ -534,7 +661,7 @@ h1 {
 }
 .pics .pic-row .pic-container .text1 {
   width: 95%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(19, 15, 15, 0.92);
   position: absolute;
   top: 0;
   left: 13;
@@ -558,13 +685,14 @@ h1 {
   }
 }
 .pics .pic-row .pic-container .square2 {
-  width: 98%;
+  width: 100%;
   background-image: url('/images/blackandwhitedrone.jpg');
-  height: 36em;
+  height: 24em;
   background-size: cover;
   background-position: center;
   border-radius: .5em;
   cursor: pointer;
+  border: 1px solid grey;
 }
 @media (max-width: 770px) {
   .pics .pic-row .pic-container .square2 {
@@ -582,22 +710,19 @@ h1 {
 }
 .explanation .software-container {
   width: 100%;
+  margin-bottom: 5em;
 }
 @media (max-width: 990px) {
-  .explanation .software-container {
-    width: 75%;
-    border-radius: 2em;
-  }
 }
 .explanation .software-container .software-section {
-  padding-top: 6.5em;
-  padding-bottom: 6.5em;
-  background-color: white;
+  padding-top: 2.5em;
+  padding-bottom: 3.5em;
+  background-color: rgba(0, 0, 0, 0.65);
   margin-bottom: 13em;
 }
 @media (max-width: 990px) {
   .explanation .software-container .software-section {
-    min-height: 35em;
+    min-height: 40em;
     border-radius: 2em;
     margin-bottom: 3em;
   }
@@ -607,41 +732,53 @@ h1 {
   text-align: center;
 }
 .explanation .software-container .software-section .text-container .about-container .square .glyph-container .glyphicon {
-  font-size: 2em;
+  font-size: 3em;
   padding: 0.5em 0.5em;
   color: lightblue;
-  margin-right: 20px;
 }
 .explanation .software-container .software-section .text-container .about-container .square .text-container h4 {
   text-align: center;
-  color: black;
-  font-size: 1em;
+  color: white;
+  font-size: 2.5em;
+  letter-spacing: 10px;
   text-transform: uppercase;
 }
 .explanation .software-container .software-section .text-container .about-container .square .text-container p {
   text-align: center;
-  color: #1b1b1b;
-  font-size: 1em;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 15px;
+  padding: 25px 25px 0 25px;
 }
 .explanation .hardwares {
   padding-bottom: 2em;
+  background-color: rgba(0, 0, 0, 0.92);
+  width: 100%;
+}
+@media (max-width: 990px) {
 }
 .explanation .hardwares .pic-row {
-  margin-top: 7em;
+  margin-top: 6em;
 }
 @media (max-width: 990px) {
   .explanation .hardwares .pic-row {
-    margin-top: 3em;
+    margin-top: 1em;
+  }
+}
+@media (max-width: 680px) {
+  .explanation .hardwares .pic-row {
+    margin-top: 1em;
   }
 }
 @media (max-width: 990px) {
   .explanation .hardwares .pic-row .pic-container {
     margin-bottom: 3em;
+    margin-top: 3em;
   }
 }
 .explanation .hardwares .pic-row .pic-container .square1 {
   width: 100%;
-  background-image: url('/images/bebop.jpg');
+  background-image: url('/images/bebop2_blanc.png');
   height: 15em;
   background-size: cover;
   background-position: center;
@@ -656,18 +793,35 @@ h1 {
   }
 }
 .explanation .hardwares .pic-row .pic-container .square2 {
-  height: 19em;
   color: #1b1b1b;
-  line-height: 25px;
-  font-size: 16px;
-  width: 95%;
+  line-height: 28px;
+  font-size: 17px;
+  width: 85%;
   margin-left: 25px;
+}
+@media (max-width: 700px) {
+  .explanation .hardwares .pic-row .pic-container .square2 {
+    margin-top: 2em;
+    width: 98%;
+  }
+}
+.explanation .hardwares .pic-row .pic-container .square2 p {
+  color: white;
+  letter-spacing: 1px;
 }
 @media (max-width: 990px) {
   .explanation .hardwares .pic-row .pic-container .square2 {
-    height: 8em;
     text-align: center;
   }
+}
+@media (max-width: 640px) {
+  .explanation .hardwares .pic-row .pic-container .square2 {
+    width: 90%;
+  }
+}
+#map {
+  height: 300px;
+  width: 70%;
 }
 * {
   box-sizing: border-box;

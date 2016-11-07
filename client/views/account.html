@@ -1,41 +1,53 @@
 <div class="account-body">
-    <h1>This is the account home page</h1>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>The list of the user's current buildings</h1>
-                <div class="building-list" ng-repeat="building in buildings">
-                    <h4>{{ building.buildingName }} <a href="#" ng-click="showDetails(building, $index)">Details</a> <a href="#" ng-click="showRoutes(building)">Routes</a></h4>
-                    <div class="building-details" ng-hide="building.hideDetails" ng-init="building.hideDetails = true">
-                        <p>Height: {{ building.height }}</p>
-                        <p>Width: {{ building.width }}</p>
-                        <p>Length: {{ building.length }}</p>
-                        <div id="shape-{{$index}}" class="shape-div"></div>
-                    </div>
-                    <div class="routes-div" ng-hide="building.hideRoutes" ng-init="building.hideRoutes = true">
-                        <div class="singleroute-div" ng-repeat="route in building.routes track by $index">
-                            <h5>Route ID: {{ route.id }}</h5>
-                            <p ng-repeat="step in route.commands track by $index">{{ step.command }}: {{ step.amount }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Create a new building</h1>
-                <create-building></create-building>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>Create a new route</h1>
-                <create-route></create-route>
-            </div>
-        </div>
-    </div>
-</div>
+	<div class="container-fluid container">
+		<div class="row">
+
+			<div class="buildings-container col-md-12">
+				<h1> Current Buildings:</h1>
+				<div class="building-names">
+					<div class="building-list col-md-4 col-sm-6 col-xs-12" ng-repeat="building in buildings">
+						<h4 class="buildingz">{{ building.buildingName }} </h4>
+						<div class="detail-view">
+							<a class="detailz" href="#" ng-click="showDetails(building, $index)">Details</a>
+							<a class="routez" href="#" ng-click="showRoutes(building)">Routes</a>
+						</div>
+						<div class="building-details thumbnail" ng-hide="building.hideDetails" ng-init="building.hideDetails = true">
+							<div class="thumb-photo">
+								<div id="shape-{{$index}}" class="shape-div"></div>
+							</div>
+							<div class="caption">
+								<h4>Height: </h4>
+								<p> {{ building.height }}</p>
+								<h4>Width: </h4>
+								<p>{{ building.width }}</p>
+								<h4>Length: </h4>
+								<p>{{ building.length }}</p>
+							</div>
+							<div class="routes-div" ng-hide="building.hideRoutes" ng-init="building.hideRoutes = true">
+								<div class="singleroute-div" ng-repeat="route in building.routes track by $index">
+										<h3>Route ID: {{ route.id }}</h3>
+									<div class="commands">
+										<div ng-repeat="step in route.commands track by $index">
+											<h4>{{ step.command }} : </h4>
+											<p> {{step.amount }}</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="create-container container">
+		<div class="create-row row">
+			<div class="building-btn col-md-6 col-sm-6 col-xs-12">
+				<create-building class="create-building"></create-building>
+			</div>
+			<div class="building-btn two col-md-6 col-sm-6 col-xs-12">
+				<create-route class="create-route"></create-route>
+			</div>
+		</div>
+	</div>
