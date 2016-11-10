@@ -39,6 +39,7 @@ router.route('/user/:userid')
         procedures.read(req.params.userid).then(function(route) {
             res.send(route);
         }, function(err) {
+            console.log(err);
             res.status(500).send(err);
         });
     });

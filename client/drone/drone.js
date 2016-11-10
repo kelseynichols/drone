@@ -1,16 +1,15 @@
 var bebop = require('node-bebop'),
     temporal = require('temporal'),
-    cv = require('opencv'),
-    fs = require('fs');
+    fs = require('fs'),
+    db = require('../config/db');
 
-var output = fs.createWriteStream('./video.h264'),
-    drone = bebop.createClient({ip:'192.168.42.1'}),
-    video = drone.getVideoStream();
+var droneHost = '192.168.42.1';
 
-video.pipe(output);
+var drone = bebop.createClient({ip:droneHost});
 
 var PilotingSettings = drone.PilotingSettings,
-    SpeedSettings = drone.SpeedSettings;
+    SpeedSettings = drone.SpeedSettings,
+    MediaStreaming = drone.MediaStreaming;
 
 /*
 * initial settings
@@ -53,14 +52,8 @@ var desiredSettings = {
 */
 var routeArry = [
     {
-        cmd: 'stopRecording'
-    },
-    {
         cmd: 'up',
         amt: 10
-    },
-    {
-        cmd: 'startRecording'
     },
     {
         cmd: 'down',
@@ -72,9 +65,6 @@ var routeArry = [
     },
     {
         cmd: 'stop'
-    },
-    {
-        cmd: 'stopRecording'
     },
     {
         cmd: 'counterClockwise',
@@ -210,8 +200,6 @@ function settingsLoop(aDrone) {
             console.log(setting);
             if (setting === 'maxVerticalSpeed' || setting === 'maxRotationSpeed') {
                 SpeedSettings.self = SpeedSettings[setting](desiredSettings[setting]);
-            } else if (setting === 'videoEnable') {
-                MediaStreaming[setting](desiredSettings[setting]);
             } else {
                 PilotingSettings.self = PilotingSettings[setting](desiredSettings[setting]);
             }  
@@ -222,8 +210,7 @@ function settingsLoop(aDrone) {
     if (readyCount === propertyCount) {
         droneState.isSet = true;
         clearInterval(settingsIntervalId);
-        console.log('drone state:', droneState);
-        // aDrone.takeOff();
+        aDrone.takeOff();
     } else {
         console.log('update:', currentSettings);
         droneState.isSet = false;
@@ -238,16 +225,13 @@ function settingsLoop(aDrone) {
 */
 
 drone.connect(function() {
-    console.log('connected');
+    console.log('connected to host:', drone.ip);
     drone.MediaStreaming.videoEnable(1);
-    setTimeout(function() {
-        drone.MediaStreaming.videoEnable(1);
-    }, 5000);
     setTimeout(function() {
         drone.land();
         console.log('CONNECT TIMEOUT FORCED LAND');
     }, 60000);
-});
+}.bind(drone));
 
 drone
     .on('MaxAltitudeChanged', function(settingObj) {
@@ -272,7 +256,6 @@ drone
     })
     .on('ready', function() {
         console.log('ready to fly');
-        drone.MediaStreaming.videoEnable(1);
         settingsIntervalId = setInterval(function() {
             settingsLoop(drone);
         }, 1000);
@@ -292,7 +275,7 @@ drone
         droneState.isLanded = false;
         if (cmdIndex === 0) {
             console.log('starting queue');
-            // runQueue(flightPath, this);
+            runQueue(flightPath, this);
             cmdIndex++;
         }
     })
@@ -309,11 +292,11 @@ drone
     .on('emergency', function() {
         console.log('emergency');
     })
-    .on('video', function(frame) {
-        console.log('video frame');
-    })
     .on('VideoEnableChanged', function(status) {
         console.log('video enable changed - status:', status);
+        if (status.enabled !== 'enabled') {
+            drone.MediaStreaming.videoEnable(1);
+        }
     });
 
 function runQueue(theRoute, aDrone) {

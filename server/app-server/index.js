@@ -4,27 +4,49 @@ const operationTimeout = 10000;
 var currentTimeout = null;
 const thingName = 'bebop';
 var stack = [];
+
+var express = require('express');
+var router = express.Router();
+var testId = 9;
+var currentRouteId = null;
 const thingShadows = thingShadow({
     host: "ams6ieb4v4dry.iot.us-east-1.amazonaws.com",
     port: 8883,
     region: 'us-east-1',
     clientId: 'droneApp',
-    caCert: '../aws-certs/root-CA.crt',
-    clientCert: '../aws-certs/afa4bee0c2-certificate.pem.crt',
-    privateKey: '../aws-certs/afa4bee0c2-private.pem.key'
+    caCert: 'aws-certs/root-CA.crt',
+    clientCert: 'aws-certs/afa4bee0c2-certificate.pem.crt',
+    privateKey: 'aws-certs/afa4bee0c2-private.pem.key'
 });
+var isConnected = false;
+
+router.route('/:id')
+    .post(function(req, res) {
+        console.log('updating fly id request');
+        console.log('and the route id is...', req.params.id);
+        currentRouteId = req.params.id;
+        if (isConnected) {
+            console.log('connected to aws and registering shadow');
+            registerShadow(req.params.id);
+        }
+    });
 
 var currentState = {
     connect: false,
     takeoff: false,
-    land: false
+    land: false,
+    routeSet: false,
+    routeId: null
 };
 
-function generateState (cState) {
+function generateState (cState, id) {
+    
     var desired = {
         connect: false,
         takeoff: false,
-        land: false
+        land: false,
+        routeSet: false,
+        routeId: null
     };
     
    switch (cState) {
@@ -32,22 +54,28 @@ function generateState (cState) {
             desired.connect = true;
             desired.takeoff = false;
             desired.land = false;
+            desired.routeSet = false;
+            desired.routeId = id;
             break;
         case 'takeoff':
             desired.connect = true;
             desired.takeoff = true;
             desired.land = false;
+            desired.routeSet = true;
+            desired.routeId = id;
             break;
         case 'land':
             desired.connect = true;
             desired.takeoff = false;
             desired.land = true;
+            desired.routeSet = true;
+            desired.routeId = id;
             break;
     }
     return desired;
 }
 
-function registerShadow () {
+function registerShadow (routeId) {
     thingShadows.register(thingName, {
         ignoreDeltas: false,
         operationTimeout: operationTimeout
@@ -60,6 +88,10 @@ function registerShadow () {
         }
         if (typeof err === 'undefined' && typeof failedTopics === 'undefined') {
             console.log('mobile thing registered');
+            console.log('takeoff route:', routeId);
+            var takeoffState = {state: {desired: generateState('takeoff', routeId)}};
+            var connectState = {state: {desired: generateState('connect', null)}};
+            executeOperation('update', takeoffState);
         }
     });
 }
@@ -85,7 +117,7 @@ function executeOperation(oName, stateObject) {
 function handleConnect() {
     // after connecting to aws iot register interest in thing shadow
     console.log('connected to aws');
-    registerShadow();
+    isConnected = true;
 }
 
 function handleStatus (thingName, stat, clientToken, stateObject) {
@@ -95,10 +127,10 @@ function handleStatus (thingName, stat, clientToken, stateObject) {
 
 function handleDelta(thingName, stateObject) {
     console.log('delta on', thingName, ':', JSON.stringify(stateObject));
-    var isTakeoff = stateObject.state.takeoff;
-    if (isTakeoff) {
-        console.log('sending land request');
-        var landState = {state: {desired: generateState('land')}};
+    var isLanded = stateObject.state.land;
+    if (isLanded) {
+        console.log('updating shadow for land delta');
+        var landState = {state: {desired: generateState('land', null)}};
         executeOperation('update', landState);
     }
 }
@@ -147,3 +179,5 @@ thingShadows
     .on('message', function(topic, payload) {
         handleMessage(topic, payload);
     });
+
+    module.exports = router;

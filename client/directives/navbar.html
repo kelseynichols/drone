@@ -24,11 +24,11 @@
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="/account_home" ng-hide="hideLogout">View Your Account</a></li>
+						<li><a id="vya" href="/account_home" ng-hide="hideLogout">View Your Account</a></li>
 						<!--<li><a href="/register">Register</a></li>-->
-						<li role="separator" class="divider"></li>
-						<li><a href="#" ng-click="logout()" ng-hide="hideLogout">Log Out</a></li>
-						<li><a href="/login" ng-show="showLogin">Log In</a></li>
+						<li role="separator" class="divider" ng-hide="hideLogout"></li>
+						<li><a id="logout" ng-click="logout()" ng-hide="hideLogout">Log Out</a></li>
+						<li><a id="login" href="/login" ng-show="showLogin">Log In</a></li>
 					</ul>
 				</li>
 			</ul>

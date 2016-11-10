@@ -3,25 +3,28 @@ angular.module('DroneApp.factories', [])
     return $resource('http://localhost:3000/api/users/:id', { id:'@id' });
 }])
 .factory('Buildings', ['$resource', function($resource) {
-    return $resource('http://localhost:3000/api/buildings/:id', { id:'@id' }, {
+    return $resource('/api/buildings/:id', { id:'@id' }, {
         filter: {
-            url: 'http://localhost:3000/api/buildings/user/:userid',
+            url: '/api/buildings/user/:userid',
             method: 'GET',
             isArray: true
         }
     });
 }])
 .factory('Routes', ['$resource', function($resource) {
-    return $resource('http://localhost:3000/api/routes/:id', { id:'@id' }, {
+    return $resource('/api/routes/:id', { id:'@id' }, {
         filter: {
-            url: 'http://localhost:3000/api/routes/user/:userid',
+            url: '/api/routes/user/:userid',
             method: 'GET',
             isArray: true
         },
         building: {
-            url: 'http://localhost:3000/api/routes/building/:buildingid',
+            url: '/api/routes/building/:buildingid',
             method: 'GET',
             isArray: true
         }
     });
+}])
+.factory('FlyRoutes', ['$resource', function($resource) {
+    return $resource('/api/flyroute/:id', { id:'@id' });
 }])

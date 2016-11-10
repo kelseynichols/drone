@@ -15,7 +15,7 @@ angular.module('DroneApp', ['ngRoute', 'ngResource', 'DroneApp.controllers', 'Dr
         controller: 'PastWorkController'
     })
     .when('/login', {
-        templateUrl: 'views/login.html',
+        templateUrl: 'views/logIn.html',
         controller: 'LoginController'
     })
     .when('/contact', {

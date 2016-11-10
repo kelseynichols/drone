@@ -69,6 +69,7 @@ angular.module('DroneApp.directives', [])
             controller: ['$scope', 'Buildings', 'UserService', 'Routes', function ($scope, Buildings, UserService, Routes) {
                 var map;
                 $scope.mapVertices = [];
+                var markers = [];
                 function initMap() {
                     map = new google.maps.Map(document.getElementById('map'), {
                     center: {lat: 33.511695, lng: -86.812542},
@@ -76,100 +77,84 @@ angular.module('DroneApp.directives', [])
                     });
                 }
                 initMap();
+                map.setOptions({disableDoubleClickZoom: true });
                 $("#myModal").on("shown.bs.modal", function () {
                     google.maps.event.trigger(map, "resize");
                     // map.setCenter(latlng);
                 });     
-
-                // google.maps.event.addListener(map, 'click', function(event) {
-                //     marker = new google.maps.Marker({position: event.latLng, map: map});
-                //     console.log(marker);
-                // });
+                
                 google.maps.event.addListener(map, 'dblclick', function( event ){
                     var markerPosition = {
                         latitude: event.latLng.lat(), 
                         longitude: event.latLng.lng()
                     };
                     marker = new google.maps.Marker({position: event.latLng, map: map});
+                    markers.push(marker);
                     $scope.mapVertices.push(markerPosition);
                     console.log($scope.mapVertices);
-                    $scope.coordinate = $scope.mapVertices;
-                    alert( "Latitude: "+event.latLng.lat()+" "+", longitude: "+event.latLng.lng() );
+                    $scope.$apply();
+                    
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: 'Lat: ' + event.latLng.lat() + ', Long: ' + event.latLng.lng()
+                    })
+                    marker.addListener('click', function() {
+                        infoWindow.open(map, marker);
+                    });
                 });
-                $scope.coordinate = $scope.mapVertices;
-                // google.maps.event.addListener(marker, "click", function (event) {
-                //     alert(this.position);
-                // });
                 
                 var user = UserService.me().then(function (success) {
                     user = success.id;
                     $scope.buildings = Buildings.filter({ userid: success.id });
                 });
 
-                $scope.routeCommands = [];
+                $scope.routeHeights = [];
 
-                $scope.addRoute = function () {
+                $scope.addRouteHeight = function () {
                     console.log('clicked add route');
-                    $scope.routeCommands.push({
-                        command: $scope.selectedCommand,
-                        amount: $scope.inputAmount
-                    });
-                    $(document).ready(function() {
-                        if ($scope.selectedCommand === 'Right') {
-                            console.log('adding border');
-                            $('.buildingroutediv').css({
-                                padding: "-100px",
-                                borderTop: "15px groove black"
-                            });
-                        } else if ($scope.selectedCommand === 'Left') {
-                            console.log('adding border');
-                            $('.buildingroutediv').css({
-                                padding: "-100px",
-                                borderBottom: "15px groove black"
-                            });
-                        } else if ($scope.selectedCommand === 'Forward') {
-                            console.log('adding border');
-                            $('.buildingroutediv').css({
-                                padding: "-100px",
-                                borderLeft: "15px groove black"
-                            });
-                        } else if ($scope.selectedCommand === 'Backward') {
-                            console.log('adding border');
-                            $('.buildingroutediv').css({
-                                padding: "-100px",
-                                borderRight: "15px groove black"
-                            });
-                        } else {
-                            console.log('failed to add border');
-                        }
-                    });
+                    var rHeight = {
+                        height: $scope.inputAmount
+                    }
+                    $scope.routeHeights.push(rHeight);
+                    console.log($scope.routeHeights);
                 }
 
                 $scope.submitRoute = function () {
                     console.log('clicked submit route');
-                    var commandString = JSON.stringify($scope.routeCommands);
+                    var heightString = JSON.stringify($scope.routeHeights);
+                    var commandString = JSON.stringify($scope.mapVertices);
                     var selectedBuilding;
                     try {
                         selectedBuilding = JSON.parse($scope.selectedBuilding);
+                        console.log(selectedBuilding);
                     } catch (err) {
                         console.log(err);
                         selectedBuilding = {};
+                        console.log(selectedBuilding);
                     }
 
                     var routeData = {
                         userid: user,
                         buildingid: selectedBuilding.id,
-                        commands: commandString
+                        commands: commandString,
+                        heights: heightString
                     }
                     var route = new Routes(routeData);
                     route.$save(function (success) {
                         console.log(success);
                     });
                 }
-
+                var clearMarkers = function() {
+                    markers.forEach(function(marker) {
+                        marker.setMap(null);
+                    });
+                }
                 $scope.clearRoute = function () {
-                    console.log('clicked claer route');
+                    console.log('clicked clear route');
+                    $scope.mapVertices = [];
+                    $scope.routeHeights = [];
                     $scope.routeCommands = [];
+                    clearMarkers();
+                    markers = [];
                 }
 
                 $scope.changeBuilding = function () {
@@ -181,51 +166,38 @@ angular.module('DroneApp.directives', [])
                         console.log(err);
                         selectedBuilding = {};
                     }
-                    $(document).ready(function () {
-                        console.log('in the jquery handler');
-                        $('.routebuilding-shape').remove();
-                        var createShape = function () {
-                            console.log('creating shape');
-                            var canvas = $('.buildingroutediv');
-                            var Shape = function (width, height) {
-                                this.width = width;
-                                this.height = height;
-                            }
-                            Shape.prototype.draw = function () {
-                                this.div = $('<div></div>');
-                                this.div.addClass('routebuilding-shape');
-                                this.div.css({
-                                    position: "relative",
-                                    textAlign: "center",
-                                    lineHeight: (this.height*10) + "px",
-                                    verticalAlign: "middle",
-                                    background: "rgba(255,0,0,0.5)",
-                                    width: (this.width * 10) + "px",
-                                    height: (this.height * 10) + "px",
-                                    top: "50%",
-                                    left: "50%",
-                                    transform: "translate(-50%, -50%)"
-                                });
-                                this.div.text(selectedBuilding.buildingName);
-                                canvas.append(this.div);
-                            }
-                            var Rectangle = function (width, height) {
-                                Shape.call(this, width, height);
-                                this.cssClass = 'new-rectangle';
-                                this.draw();
-                            }
-                            Rectangle.prototype = Object.create(Shape.prototype);
-                            Rectangle.prototype.constructor = Rectangle;
-                            function createRectangle() {
-                                console.log('drawing building');
-                                new Rectangle(selectedBuilding.width, selectedBuilding.length);
-                            }
-                            createRectangle();
-                        }
 
-                        createShape();
+                }
+                // testing route commands up, down, left, right
+
+                $scope.routeCommands = [];
+                $scope.addRouteParam = function() {
+                    $scope.routeCommands.push({
+                        cmd: $scope.selectedCommand,
+                        amt: $scope.inputAmount
                     });
-
+                    console.log($scope.routeCommands);
+                }
+                $scope.submitRouteCmds = function() {
+                    console.log('clicked to submit commands');
+                    var cmdString = JSON.stringify($scope.routeCommands);
+                    var selBuilding;
+                    try {
+                        selBuilding = JSON.parse($scope.selectedBuilding);
+                        console.log(selBuilding);
+                    } catch (err) {
+                        console.log(err);
+                        selBuilding = {};
+                        console.log(selectedBuilding);
+                    };
+                    var rteData = {
+                        userid: user,
+                        buildingid: selBuilding.id,
+                        commands: cmdString,
+                        heights: 0                        
+                    }
+                    var rte = new Routes(rteData);
+                    rte.$save();
                 }
             }]
         }

@@ -1,35 +1,45 @@
 <div class="account-body">
 	<div class="container-fluid container">
 		<div class="row">
-
-			<div class="buildings-container col-md-12">
-				<h1> Current Buildings:</h1>
+			<div class="buildings-container ">
 				<div class="building-names">
-					<div class="building-list col-md-4 col-sm-6 col-xs-12" ng-repeat="building in buildings">
+					<div class="building-list col-md-6 col-sm-12 col-xs-12" ng-repeat="building in buildings">
 						<h4 class="buildingz">{{ building.buildingName }} </h4>
 						<div class="detail-view">
-							<a class="detailz" href="#" ng-click="showDetails(building, $index)">Details</a>
-							<a class="routez" href="#" ng-click="showRoutes(building)">Routes</a>
+							<p class="detailz" href="#" ng-click="showDetails(building, $index)">View Building</p>
 						</div>
-						<div class="building-details thumbnail" ng-hide="building.hideDetails" ng-init="building.hideDetails = true">
+						<div class="building-details thumbnail col-md-12" ng-hide="building.hideDetails" ng-init="building.hideDetails = true">
 							<div class="thumb-photo">
 								<div id="shape-{{$index}}" class="shape-div"></div>
 							</div>
-							<div class="caption">
-								<h4>Height: </h4>
-								<p> {{ building.height }}</p>
-								<h4>Width: </h4>
-								<p>{{ building.width }}</p>
-								<h4>Length: </h4>
-								<p>{{ building.length }}</p>
+							<div class="caption col-md-12">
+								<div class="letter">
+									<h4>H: </h4>
+									<p class="l"> {{ building.height }}</p>
+								</div>
+								<div class="letter">
+									<h4>W: </h4>
+									<p class="l"> {{ building.width }}</p>
+								</div>
+								<div class="letter">
+									<h4>L: </h4>
+									<p class="l"> {{ building.length }}</p>
+								</div>
 							</div>
-							<div class="routes-div" ng-hide="building.hideRoutes" ng-init="building.hideRoutes = true">
+							<p class="routez" ng-click="showRoutes(building)">View Routes</p>
+
+							<div class="routes-div col-md-12" ng-hide="building.hideRoutes" ng-init="building.hideRoutes = true">
 								<div class="singleroute-div" ng-repeat="route in building.routes track by $index">
 										<h3>Route ID: {{ route.id }}</h3>
+										<!--<span class="glyphicon glyphicon-remove"></span>-->
+
+										<button class="flybutton" id="flyroutebtn" ng-click="flyRoute(route)">Fly!</button>
 									<div class="commands">
+										<div ng-repeat="height in route.heights track by $index">
+											<p>Height: {{height.height}} ft.</p>
+										</div>
 										<div ng-repeat="step in route.commands track by $index">
-											<h4>{{ step.command }} : </h4>
-											<p> {{step.amount }}</p>
+											<p>Lat: {{step.latitude | limitTo : 6 : 0 }} || Lng: {{step.longitude | limitTo : 6 : 0 }}</p>
 										</div>
 									</div>
 								</div>
@@ -40,7 +50,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="create-container container">
 		<div class="create-row row">
 			<div class="building-btn col-md-6 col-sm-6 col-xs-12">

@@ -17,7 +17,7 @@ router.route('/')
     })
     .post(function(req, res) {
         console.log(req.body);
-        procedures.create(req.body.userid, req.body.buildingid, req.body.commands).then(function(route) {
+        procedures.create(req.body.userid, req.body.buildingid, req.body.commands, req.body.heights).then(function(route) {
             console.log(route);
             res.send(route);
         }, function(err) {
@@ -51,7 +51,9 @@ router.route('/building/:buildingid')
             routes.forEach(function(route) {
                 try {
                     var array = JSON.parse(route.commands);
+                    var height = JSON.parse(route.heights);
                     route.commands = array;
+                    route.heights = height;
                 } catch (err) {
                     console.log(err);
                     route.commands = [];
@@ -66,7 +68,7 @@ router.route('/building/:buildingid')
 
 router.route('/:id')
     .get(function(req, res) {
-        procedures.read(req.params.id).then(function(route) {
+        procedures.find(req.params.id).then(function(route) {
             res.send(route);
         }, function(err) {
             console.log(err);

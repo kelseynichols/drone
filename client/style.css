@@ -30,11 +30,12 @@
   padding-top: 0px;
   padding-bottom: 0px;
   line-height: 80px;
+  font-family: 'Cutive Mono', monospace;
+  font-size: 18px;
 }
 .navbar-nav > li > a:hover {
-  border-bottom: 4px solid dimgrey;
-  line-height: 76px;
-  font-size: 14px;
+  font-size: 19px;
+  color: lightblue;
 }
 @media (max-width: 767px) {
   .navbar-nav > li > a {
@@ -46,13 +47,21 @@
 .navbar-toggle {
   margin: 2rem;
 }
+#login {
+  font-family: 'Cutive Mono', monospace;
+}
+#vya {
+  font-family: 'Cutive Mono', monospace;
+}
+#logout {
+  font-family: 'Cutive Mono', monospace;
+}
 .welcome-container {
   position: relative;
   text-align: center;
 }
 video {
   -webkit-filter: grayscale(100%);
-  /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
   position: fixed;
   top: 50%;
@@ -71,7 +80,7 @@ video {
 }
 #vid {
   font-weight: 100;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 2rem;
   font-size: 1.2rem;
@@ -79,17 +88,20 @@ video {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: 170px 0 0 -140px;
+  margin: 200px 0 0 -120px;
 }
 #vid h1 {
   font-size: 3rem;
   text-transform: uppercase;
   margin-top: 0;
+  margin-bottom: 1em;
   letter-spacing: 5px;
+  font-family: 'Share Tech Mono', monospace;
 }
 #vid p {
   font-size: 19px;
   letter-spacing: 1px;
+  font-family: 'Cutive Mono', monospace;
 }
 #vid .howitworks {
   display: inline-block;
@@ -100,11 +112,12 @@ video {
   transition: .6s background;
   font-size: 1.4em;
   letter-spacing: 2px;
-  border: 1px solid white;
   text-transform: uppercase;
   border-radius: 5px;
   margin: 7px;
   padding: 3px 15px 3px 15px;
+  font-family: 'Share Tech Mono', monospace;
+  margin-top: 2em;
 }
 #vid .howitworks:hover {
   text-decoration: none;
@@ -158,6 +171,7 @@ video {
   height: 4em;
   padding: 0;
   margin-bottom: 15px;
+  font-family: 'Share Tech Mono', monospace;
 }
 .creator-container .user-creator .register-form .tabs .tab1-register {
   display: inline-block;
@@ -187,6 +201,7 @@ video {
   margin-top: 20px;
   margin-bottom: 15px;
   text-transform: uppercase;
+  font-family: 'Share Tech Mono', monospace;
 }
 .creator-container .user-creator .register-form .userinfo {
   float: none;
@@ -197,6 +212,7 @@ video {
 .creator-container .user-creator .register-form .userinfo input::-webkit-input-placeholder {
   color: #5b5b5b;
   padding-left: 3px;
+  font-family: 'Cutive Mono', monospace;
 }
 .creator-container .user-creator .register-form .userinfo .username {
   margin-bottom: .5em;
@@ -240,12 +256,12 @@ video {
   margin-top: 1.3em;
 }
 .creator-container .user-creator .register-form .userinfo .confirm button {
-  border: 1px solid white;
   border-radius: 5px;
   color: white;
   width: 9.5em;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-family: 'Share Tech Mono', monospace;
 }
 .creator-container .user-creator .register-form .userinfo .confirm button:hover {
   background: rgba(0, 0, 0, 0.5);
@@ -261,6 +277,7 @@ video {
   width: 9.5em;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-family: 'Share Tech Mono', monospace;
 }
 .creator-container .user-creator .register-form .userinfo a .confirm button:hover {
   background: rgba(0, 0, 0, 0.5);
@@ -271,6 +288,7 @@ video {
   letter-spacing: 1px;
   font-size: 12px;
   color: lightblue;
+  font-family: 'Cutive Mono', monospace;
 }
 .creator-container .user-creator .register-form .userinfo a h6:hover {
   text-decoration: none;
@@ -324,6 +342,7 @@ video {
   height: 4em;
   padding: 0;
   margin-bottom: 15px;
+  font-family: 'Share Tech Mono', monospace;
 }
 .creator-container .user-creator-login .login-form .tabs-login .tab1 {
   display: inline-block;
@@ -352,6 +371,7 @@ video {
   margin-top: 35px;
   margin-bottom: 35px;
   text-transform: uppercase;
+  font-family: 'Share Tech Mono', monospace;
 }
 .creator-container .user-creator-login .login-form .userinfo input {
   border-radius: 5px;
@@ -359,6 +379,7 @@ video {
 .creator-container .user-creator-login .login-form .userinfo input::-webkit-input-placeholder {
   color: #5b5b5b;
   padding-left: 3px;
+  font-family: 'Cutive Mono', monospace;
 }
 .creator-container .user-creator-login .login-form .userinfo .username {
   margin-bottom: .5em;
@@ -389,6 +410,7 @@ video {
   width: 9.5em;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-family: 'Share Tech Mono', monospace;
 }
 .creator-container .user-creator-login .login-form .userinfo .confirm button:hover {
   background: rgba(0, 0, 0, 0.5);
@@ -402,35 +424,124 @@ video {
   letter-spacing: 1px;
   font-size: 12px;
   color: lightblue;
-}
-.contact-container {
-  position: relative;
-  min-height: 95vh;
+  font-family: 'Cutive Mono', monospace;
 }
 @media (max-width: 990px) {
   .contact-container {
     max-width: 50em;
   }
 }
+.contact-container .address-container {
+  text-align: center;
+}
+.contact-container .address-container h1 {
+  margin-top: .8em;
+  margin-bottom: 1em;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  font-size: 4em;
+  font-family: 'Share Tech Mono', monospace;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 2em;
+  padding-left: 10px;
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+@media (max-width: 990px) {
+  .contact-container .address-container h1 {
+    width: 98%;
+  }
+}
+@media (max-width: 990px) {
+  .contact-container .address-container {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: -3em;
+  }
+}
+@media (max-width: 770px) {
+  .contact-container .address-box {
+    text-align: center;
+  }
+}
+.contact-container .address-box .address-info {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 1.4em;
+  color: white;
+  letter-spacing: 2px;
+  border-bottom-left-radius: 1em;
+  border-top-left-radius: 1em;
+}
+@media (max-width: 991px) {
+  .contact-container .address-box .address-info {
+    float: none;
+    text-align: center;
+    padding: 1em;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 0;
+  }
+}
+.contact-container .address-box .address-info .address-stuff h3 {
+  margin-top: 10px;
+  margin-bottom: 19px;
+  font-family: 'Cutive Mono', monospace;
+}
+@media (max-width: 991px) {
+  .contact-container .address-box .address-info .address-stuff {
+    float: none;
+    text-align: center;
+  }
+}
+.contact-container .address-box .social-stuff {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 2em;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+@media (max-width: 991px) {
+  .contact-container .address-box .social-stuff {
+    text-align: center;
+    padding: 1em;
+    padding-bottom: 2em;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    border-top-right-radius: 0;
+  }
+}
+.contact-container .address-box .social-stuff .social-pics {
+  display: inline-block;
+}
+.contact-container .address-box .social-stuff .social-pics img {
+  height: 4em;
+  margin: 28px;
+}
 .contact-container .contact-row {
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  height: 20em;
-  margin-top: -10em;
-  width: 100%;
+  margin-top: 2em;
+}
+@media (max-width: 990px) {
+  .contact-container .contact-row {
+    margin-top: 7em;
+  }
 }
 .contact-container .contact-row .contact-form-row .cu {
-  margin: 23px;
+  margin: 20px;
   color: white;
+  font-size: 35px;
+  margin-bottom: 30px;
   text-transform: uppercase;
   letter-spacing: 3px;
+  font-family: 'Share Tech Mono', monospace;
 }
 .contact-container .contact-row .contact-form-row .contact-form {
-  height: 27em;
+  height: 37em;
   background-color: #1b1b1c;
   text-align: center;
-  padding-top: 1em;
+  padding-top: 3em;
   border-radius: 2em;
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
@@ -438,22 +549,24 @@ video {
 }
 @media (max-width: 1000px) {
   .contact-container .contact-row .contact-form-row .contact-form {
-    margin-bottom: 2em;
+    margin-bottom: 4em;
+    padding-top: 3em;
   }
 }
 .contact-container .contact-row .contact-form-row .contact-form input {
   width: 80%;
-  margin-bottom: 1.2em;
-  height: 2em;
+  margin-bottom: 2em;
+  height: 3em;
   border-radius: 5px;
 }
 .contact-container .contact-row .contact-form-row .contact-form input::-webkit-input-placeholder {
   color: #5b5b5b;
   padding-left: 3px;
+  font-family: 'Cutive Mono', monospace;
 }
 .contact-container .contact-row .contact-form-row .contact-form textarea {
   width: 80%;
-  height: 7em;
+  height: 8em;
   margin-bottom: 1.8em;
   border-radius: 5px;
 }
@@ -461,184 +574,292 @@ video {
   color: #5b5b5b;
   padding-left: 3px;
   padding-top: 5px;
+  font-family: 'Cutive Mono', monospace;
 }
 .contact-container .contact-row .contact-form-row .contact-form button {
-  border: 1px solid white;
-  border-radius: 5px;
   color: white;
-  width: 9.5em;
+  border-radius: 5px;
+  height: 3em;
+  width: 11.5em;
   text-transform: uppercase;
   letter-spacing: 2px;
+  font-family: 'Share Tech Mono', monospace;
 }
 .contact-container .contact-row .contact-form-row .contact-form button:hover {
   background: rgba(0, 0, 0, 0.5);
-  transition: .4s background;
+  transition: .2s background;
+  color: white;
 }
 .contact-container .contact-row .map {
   border-radius: 2em;
 }
 .contact-container .contact-row .map .map-box {
-  height: 27em;
+  height: 37em;
   background-size: cover;
   background-position: -5px;
   border: 1px solid #1b1b1c;
   -webkit-filter: grayscale(100%);
-  /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
+  border-radius: 2em;
 }
-.account-body {
-  background: rgba(0, 0, 0, 0.5);
+@media (max-width: 991px) {
+  .contact-container .contact-row .map .map-box {
+    margin-bottom: 4em;
+  }
 }
 .account-body .buildings-container {
-  color: white;
+  color: #1b1b1b;
+  margin-top: 8em;
 }
 .account-body .buildings-container h1 {
   text-align: center;
   margin: 1em;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 }
-.account-body .buildings-container .building-list {
-  background-color: white;
-  min-height: 5em;
-  width: 30%;
-  margin: 0 1em 2em 1em;
+.account-body .buildings-container .building-names .building-list {
+  background: rgba(0, 0, 0, 0.78);
+  min-height: 15em;
+  width: 48%;
+  margin: 0 0em 3em 1em;
   border-radius: 2em;
-  padding-top: 1em;
+  padding-top: 3.1em;
   text-align: center;
-}
-@media (max-width: 1200px) {
-  .account-body .buildings-container .building-list {
-    width: 47%;
-  }
 }
 @media (max-width: 991px) {
-  .account-body .buildings-container .building-list {
+  .account-body .buildings-container .building-names .building-list {
     width: 98%;
+    min-height: 15em;
   }
 }
-.account-body .buildings-container .building-list .buildingz {
-  color: #1b1b1b;
-  padding-right: 1em;
-  display: inline-block;
+.account-body .buildings-container .building-names .building-list:hover {
+  -webkit-box-shadow: 0 8px 6px -6px #9C9C9C;
+  -moz-box-shadow: 0 8px 6px -6px #9C9C9C;
+  box-shadow: 10px 12px 6px -6px #9C9C9C;
+  transition: 0.2s box-shadow;
 }
-.account-body .buildings-container .building-list .detail-view {
-  display: inline-block;
-}
-.account-body .buildings-container .building-list .detail-view .detailz {
-  margin-right: 1em;
-}
-.account-body .buildings-container .building-list .building-details .thumb-photo {
-  background-color: black;
-}
-.account-body .buildings-container .building-list .building-details .thumb-photo canvas {
-  margin-left: -6em;
-}
-.account-body .buildings-container .building-list .building-details .caption {
-  width: 65%;
-  margin: 0 auto;
-}
-.account-body .buildings-container .building-list .building-details .caption h4 {
-  text-transform: uppercase;
-  display: inline-block;
-  margin-bottom: 0;
-}
-.account-body .buildings-container .building-list .building-details .caption p {
-  display: inline-block;
-  font-weight: bold;
-  font-size: 1.7em;
-  padding-left: 15px;
-  letter-spacing: 1px;
-  margin-bottom: 0;
-}
-.account-body .buildings-container .building-list .building-details .singleroute-div {
-  width: 65%;
-  margin: 0 auto;
+.account-body .buildings-container .building-names .building-list .buildingz {
+  color: white;
   text-align: center;
-}
-.account-body .buildings-container .building-list .building-details .singleroute-div h3 {
-  color: lightblue;
+  margin-bottom: .5em;
   letter-spacing: 2px;
+  font-size: 35px;
+  font-family: 'Share Tech Mono', monospace;
 }
-.account-body .buildings-container .building-list .building-details .singleroute-div .commands {
+.account-body .buildings-container .building-names .building-list .detail-view {
+  display: inline-block;
+  margin-bottom: .5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: lightblue;
+  font-size: 18px;
+}
+.account-body .buildings-container .building-names .building-list .detail-view .detailz {
+  margin-right: 1.2em;
+  display: inline-block;
+  font-family: 'Cutive Mono', monospace;
+}
+.account-body .buildings-container .building-names .building-list .detail-view .detailz:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+.account-body .buildings-container .building-names .building-list .building-details {
+  background-color: transparent;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+.account-body .buildings-container .building-names .building-list .building-details .thumb-photo canvas {
+  margin: 0 auto;
+  width: 300px !important;
+}
+.account-body .buildings-container .building-names .building-list .building-details .thumb-photo canvas .threed {
+  max-width: 250px;
+}
+.account-body .buildings-container .building-names .building-list .building-details .caption {
+  margin: 0 auto;
+  background-color: white;
+}
+.account-body .buildings-container .building-names .building-list .building-details .caption .letter {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  display: inline-block;
+  margin-left: 1.5em;
+}
+.account-body .buildings-container .building-names .building-list .building-details .caption .letter h4 {
+  display: inline-block;
+  font-size: 27px;
+  margin-right: 5px;
+  font-family: 'Share Tech Mono', monospace;
+}
+.account-body .buildings-container .building-names .building-list .building-details .caption .letter .l {
+  display: inline-block;
+  font-size: 24px;
+}
+@media (max-width: 991px) {
+}
+.account-body .buildings-container .building-names .building-list .building-details .routez {
+  display: inline-block;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: lightblue;
+  font-size: 18px;
+  font-family: 'Cutive Mono', monospace;
+}
+.account-body .buildings-container .building-names .building-list .building-details .routez:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+.account-body .buildings-container .building-names .building-list .building-details .routes-div {
+  background-color: white;
+}
+@media (max-width: 991px) {
+}
+.account-body .buildings-container .building-names .building-list .building-details .singleroute-div {
+  margin: 0 auto;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  text-align: center;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+.account-body .buildings-container .building-names .building-list .building-details .singleroute-div h3 {
+  margin-top: .5em;
+  color: #1b1b1b;
+  letter-spacing: 2px;
+  font-family: 'Share Tech Mono', monospace;
+}
+.account-body .buildings-container .building-names .building-list .building-details .singleroute-div .flybutton {
+  font-weight: bold;
+  margin: 1.5em;
+  border-radius: 5px;
+  width: 9.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  height: 2.5em;
+  font-family: 'Share Tech Mono', monospace;
+}
+.account-body .buildings-container .building-names .building-list .building-details .singleroute-div .flybutton:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transition: .4s background;
+  color: white;
+}
+.account-body .buildings-container .building-names .building-list .building-details .singleroute-div .commands {
   color: black;
 }
-.account-body .buildings-container .building-list .building-details .singleroute-div .commands h4 {
+.account-body .buildings-container .building-names .building-list .building-details .singleroute-div .commands h4 {
   text-transform: uppercase;
   display: inline-block;
   margin-bottom: 0;
+  font-family: 'Cutive Mono', monospace;
 }
-.account-body .buildings-container .building-list .building-details .singleroute-div .commands p {
+.account-body .buildings-container .building-names .building-list .building-details .singleroute-div .commands p {
   display: inline-block;
   font-weight: bold;
   font-size: 1.7em;
   padding-left: 15px;
   letter-spacing: 1px;
   margin-bottom: 0;
+  font-family: 'Cutive Mono', monospace;
 }
 .create-container {
-  background-color: purple;
   padding-top: 1em;
 }
-.create-container .building-btn {
-  background-color: blue;
+.create-container .create-row {
+  margin-bottom: 3em;
 }
 @media (max-width: 770px) {
   .create-container .building-btn {
     text-align: center;
   }
 }
-.create-container .building-btn .create-building button {
-  text-transform: uppercase;
+.create-container .building-btn .create-building .cbbtn {
   float: right;
   letter-spacing: 2px;
+  border-radius: 5px;
+  color: white;
+  width: 13em;
+  height: 3.11em;
+  text-transform: uppercase;
+  font-family: 'Share Tech Mono', monospace;
 }
 @media (max-width: 770px) {
-  .create-container .building-btn .create-building button {
+  .create-container .building-btn .create-building .cbbtn {
     float: none;
     text-align: center;
   }
 }
-.create-container .two {
-  background-color: green;
+.create-container .building-btn .create-building .cbbtn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transition: .4s background;
 }
 @media (max-width: 770px) {
   .create-container .two {
     text-align: center;
   }
 }
-.create-container .two .create-route button {
+.create-container .two .create-route .crbtn {
+  border-radius: 5px;
+  color: white;
+  width: 11.5em;
+  height: 3em;
   letter-spacing: 2px;
   text-transform: uppercase;
+  font-family: 'Share Tech Mono', monospace;
 }
 @media (max-width: 770px) {
-  .create-container .two .create-route button {
+  .create-container .two .create-route .crbtn {
     float: none;
     text-align: center;
     margin-top: 10px;
   }
 }
+.create-container .two .create-route .crbtn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transition: .4s background;
+}
 .info-page {
-  background-color: rgba(255, 255, 255, 0.8);
-  opacity: 0;
+  text-align: center;
+  color: black;
+}
+.info-page h1 {
+  color: white;
+  letter-spacing: 12px;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-top: 0;
+  font-family: 'Share Tech Mono', monospace;
+}
+.info-page p {
+  color: white;
+  padding: 0 2em 0 2em;
+  text-align: center;
 }
 .pics {
-  margin-bottom: 19em;
+  margin-bottom: 5em;
+  margin-top: 2em;
 }
 @media (max-width: 990px) {
   .pics {
-    margin-bottom: 3em;
+    margin-bottom: 2em;
+    margin-top: 1em;
   }
 }
 .pics .pic-row {
-  margin-top: 7em;
+  margin-top: 4em;
 }
 @media (max-width: 990px) {
   .pics .pic-row {
     margin-top: 3em;
   }
 }
-@media (max-width: 990px) {
+@media (max-width: 991px) {
   .pics .pic-row .pic-container {
     margin-bottom: 3em;
   }
@@ -646,57 +867,101 @@ video {
 .pics .pic-row .pic-container .square1 {
   width: 100%;
   background-image: url('/images/binary.jpg');
-  height: 24em;
+  height: 21em;
   background-size: cover;
   background-position: center;
   border-radius: .5em;
   cursor: pointer;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 10px 12px 12px -4px #999;
 }
-@media (max-width: 770px) {
+@media (max-width: 991px) {
   .pics .pic-row .pic-container .square1 {
-    height: 19em;
+    height: 25em;
+    width: 50%;
   }
 }
 .pics .pic-row .pic-container .text1 {
-  width: 95%;
+  width: 93%;
   background-color: rgba(19, 15, 15, 0.92);
   position: absolute;
   top: 0;
   left: 13;
   bottom: 0;
-  display: none;
+  opacity: 0;
   border-radius: .5em;
   cursor: pointer;
+  transition: 0.4s all ease-in-out;
 }
 .pics .pic-row .pic-container .text1 h1 {
   text-align: center;
   color: white;
-  padding-top: 3.5em;
-  padding-bottom: 3.5em;
+  padding-top: 1.5em;
+  padding-bottom: .5em;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-@media (max-width: 770px) {
+.pics .pic-row .pic-container .text1 p {
+  line-height: 2em;
+  font-size: 1.2em;
+  font-family: 'Cutive Mono', monospace;
+}
+.pics .pic-row .pic-container .text1:hover {
+  opacity: 1;
+  transition: 0.4s all ease-in-out;
+}
+@media (max-width: 991px) {
   .pics .pic-row .pic-container .text1 {
-    height: 19em;
-    margin: 0 auto;
+    height: 25em;
+    display: inline-block;
+    width: 50%;
+    margin-left: 2em;
+    padding-top: 5em;
+    opacity: 1;
+  }
+  .pics .pic-row .pic-container .text1 h1 {
+    padding-top: .8em;
   }
 }
 .pics .pic-row .pic-container .square2 {
   width: 100%;
   background-image: url('/images/blackandwhitedrone.jpg');
-  height: 24em;
+  height: 21em;
   background-size: cover;
   background-position: center;
   border-radius: .5em;
   cursor: pointer;
   border: 1px solid grey;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 10px 12px 12px -4px #999;
 }
-@media (max-width: 770px) {
+@media (max-width: 991px) {
   .pics .pic-row .pic-container .square2 {
-    height: 19em;
+    height: 25em;
+    width: 50%;
+  }
+}
+.pics .pic-row .pic-container .square3 {
+  width: 100%;
+  background-image: url('/images/usericon.jpg');
+  height: 21em;
+  background-size: cover;
+  background-position: center;
+  border-radius: .5em;
+  cursor: pointer;
+  border: 1px solid grey;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 10px 12px 12px -4px #999;
+}
+@media (max-width: 991px) {
+  .pics .pic-row .pic-container .square3 {
+    height: 25em;
+    width: 50%;
   }
 }
 .explanation {
@@ -713,115 +978,68 @@ video {
   margin-bottom: 5em;
 }
 @media (max-width: 990px) {
+  .explanation .software-container {
+    margin-bottom: 2em;
+  }
 }
 .explanation .software-container .software-section {
-  padding-top: 2.5em;
-  padding-bottom: 3.5em;
-  background-color: rgba(0, 0, 0, 0.65);
-  margin-bottom: 13em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 @media (max-width: 990px) {
   .explanation .software-container .software-section {
-    min-height: 40em;
+    min-height: 22em;
     border-radius: 2em;
     margin-bottom: 3em;
   }
 }
-.explanation .software-container .software-section .text-container .about-container .square {
-  width: 100%;
+.explanation .software-container .software-section .text-container {
+  display: inline;
+}
+.explanation .software-container .software-section .text-container .about-container {
   text-align: center;
 }
+.explanation .software-container .software-section .text-container .about-container .square {
+  width: 100%;
+}
+.explanation .software-container .software-section .text-container .about-container .square .glyph-container {
+  display: inline-block;
+}
 .explanation .software-container .software-section .text-container .about-container .square .glyph-container .glyphicon {
-  font-size: 3em;
-  padding: 0.5em 0.5em;
+  font-size: 2em;
+  padding: 0.5em 0.1em;
+  padding-right: 20px;
   color: lightblue;
+  padding-bottom: 1em;
 }
 .explanation .software-container .software-section .text-container .about-container .square .text-container h4 {
   text-align: center;
   color: white;
-  font-size: 2.5em;
+  font-size: 28px;
   letter-spacing: 10px;
   text-transform: uppercase;
+  display: inline-block;
+  font-family: 'Share Tech Mono', monospace;
 }
 .explanation .software-container .software-section .text-container .about-container .square .text-container p {
-  text-align: center;
   color: white;
   letter-spacing: 1px;
-  font-size: 15px;
-  padding: 25px 25px 0 25px;
-}
-.explanation .hardwares {
-  padding-bottom: 2em;
-  background-color: rgba(0, 0, 0, 0.92);
-  width: 100%;
-}
-@media (max-width: 990px) {
-}
-.explanation .hardwares .pic-row {
-  margin-top: 6em;
-}
-@media (max-width: 990px) {
-  .explanation .hardwares .pic-row {
-    margin-top: 1em;
-  }
-}
-@media (max-width: 680px) {
-  .explanation .hardwares .pic-row {
-    margin-top: 1em;
-  }
-}
-@media (max-width: 990px) {
-  .explanation .hardwares .pic-row .pic-container {
-    margin-bottom: 3em;
-    margin-top: 3em;
-  }
-}
-.explanation .hardwares .pic-row .pic-container .square1 {
-  width: 100%;
-  background-image: url('/images/bebop2_blanc.png');
-  height: 15em;
-  background-size: cover;
-  background-position: center;
-  border-radius: 1em;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
-@media (max-width: 750px) {
-  .explanation .hardwares .pic-row .pic-container .square1 {
-    max-width: 40em;
-    margin: 0 auto;
-  }
-}
-.explanation .hardwares .pic-row .pic-container .square2 {
-  color: #1b1b1b;
-  line-height: 28px;
   font-size: 17px;
-  width: 85%;
-  margin-left: 25px;
-}
-@media (max-width: 700px) {
-  .explanation .hardwares .pic-row .pic-container .square2 {
-    margin-top: 2em;
-    width: 98%;
-  }
-}
-.explanation .hardwares .pic-row .pic-container .square2 p {
-  color: white;
-  letter-spacing: 1px;
+  padding: 5px 25px 0 37px;
+  font-family: 'Cutive Mono', monospace;
 }
 @media (max-width: 990px) {
-  .explanation .hardwares .pic-row .pic-container .square2 {
+  .explanation .software-container .software-section .text-container .about-container .square .text-container p {
     text-align: center;
-  }
-}
-@media (max-width: 640px) {
-  .explanation .hardwares .pic-row .pic-container .square2 {
-    width: 90%;
   }
 }
 #map {
   height: 300px;
   width: 70%;
+}
+#create-building {
+  margin-top: -20px;
 }
 * {
   box-sizing: border-box;

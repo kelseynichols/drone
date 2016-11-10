@@ -6,6 +6,9 @@ exports.all = function() {
 exports.read = function(id) {
     return db.rows('GetRoute', [id]);
 }
-exports.create = function(userid, buildingid, commands) {
-    return db.row('NewRoute', [userid, buildingid, commands]);
+exports.find = function(id) {
+    return db.rows('GetRouteById', [id]);
+}
+exports.create = function(userid, buildingid, commands, heights) {
+    return db.row('NewRoute', [userid, buildingid, commands, heights]);
 }
