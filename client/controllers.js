@@ -111,18 +111,18 @@ angular.module('DroneApp.controllers', [])
         //     $scope.showRoutes();
         // }
 
-        $scope.flyRoute = function(route) {
+        $scope.flyRoute = function (route) {
             console.log('clicked fly route');
             console.log(route.id);
 
             var flyPrompt = prompt('Type "flyTheRoute" is you want to proceed');
-            switch(flyPrompt) {
+            switch (flyPrompt) {
                 case 'flyTheRoute':
                     var flyRouteData = {
                         id: route.id
                     };
                     var flyRoute = new FlyRoutes(flyRouteData);
-                    flyRoute.$save(function(success) {
+                    flyRoute.$save(function (success) {
                         console.log(success);
                     });
                     break;
@@ -220,6 +220,10 @@ angular.module('DroneApp.controllers', [])
         //         }
         //     }, 25);
         // }
+
+        $('.carousel').carousel({
+            interval: 3000
+        })
 
     }])
     .controller('PastWorkController', ['$scope', function ($scope) {

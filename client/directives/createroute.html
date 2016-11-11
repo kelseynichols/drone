@@ -47,7 +47,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Create A Route</h4>
       </div>
       <div class="modal-body">
           <div class="input-route">
@@ -55,6 +55,7 @@
                 <option value="">Select Building</option>
                 <option value="{{building}}" ng-repeat="building in buildings">{{ building.buildingName }}</option>
             </select>
+            <br>
             <select name="commands" id="" ng-model="selectedCommand">
                 <option value="">Select Command</option>
                 <option value="Height">Height 1</option>
@@ -63,19 +64,20 @@
             </select>
             <input type="number" ng-model="inputAmount" placeholder="height">
             <button ng-click="addRouteHeight()">Add</button>
-                <select name="commands" id="" ng-model="selectedCommand">
-                    <option value="">Select Command</option>
-                    <option value="up">up</option>
-                    <option value="down">down</option>
-                    <option value="left">left</option>
-                    <option value="right">right</option>
-                    <option value="clockwise">clockwise</option>
-                    <option value="counterClockwise">counter-clockwise</option>
-                    <option value="stop">stop</option>
-                    <option value="land">land</option>
-                </select>
-                <input type="number" ng-model="inputAmount" placeholder="amount">
-                <button ng-click="addRouteParam()">Add</button>
+            <br>
+            <select name="commands" id="" ng-model="selectedCommand">
+                <option value="">Select Command</option>
+                <option value="up">up</option>
+                <option value="down">down</option>
+                <option value="left">left</option>
+                <option value="right">right</option>
+                <option value="clockwise">clockwise</option>
+                <option value="counterClockwise">counter-clockwise</option>
+                <option value="stop">stop</option>
+                <option value="land">land</option>
+            </select>
+            <input type="number" ng-model="inputAmount" placeholder="amount">
+            <button ng-click="addRouteParam()">Add</button>
 
             <!--<div class="buildingroutediv"></div>-->
             <div id="map"></div>
