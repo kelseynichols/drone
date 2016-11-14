@@ -313,6 +313,26 @@ video {
   margin-bottom: 200px;
   margin-right: 200px;
 }
+#map {
+  margin: 0 auto;
+  border-radius: 5px;
+}
+button {
+  color: #1b1b1b;
+  border-radius: 5px;
+  height: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Share Tech Mono', monospace;
+}
+button:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transition: .2s background;
+  color: white;
+}
+h4 {
+  font-family: 'Share Tech Mono', monospace;
+}
 .creator-container {
   position: relative;
   height: 95vh;
@@ -826,7 +846,6 @@ iframe {
   float: right;
   letter-spacing: 2px;
   border-radius: 5px;
-  color: white;
   width: 13em;
   height: 3.11em;
   text-transform: uppercase;
@@ -849,7 +868,6 @@ iframe {
 }
 .create-container .two .create-route .crbtn {
   border-radius: 5px;
-  color: white;
   width: 11.5em;
   height: 3em;
   letter-spacing: 2px;
@@ -1007,6 +1025,40 @@ iframe {
 }
 #create-building {
   margin-top: -20px;
+}
+.modal-content {
+  background-color: #dedede;
+}
+.modal-header {
+  text-align: center;
+  font-family: 'Share Tech Mono', monospace;
+}
+.modal-header .close span {
+  font-size: 1.5em;
+}
+.modal-body {
+  text-align: center;
+}
+.modal-body input {
+  margin: 10px;
+  border-radius: 5px;
+}
+.modal-body input::-webkit-input-placeholder {
+  color: #5b5b5b;
+  padding-left: 3px;
+  font-family: 'Cutive Mono', monospace;
+}
+#create-building {
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Share Tech Mono', monospace;
+  width: 6em;
+  margin-right: 2em;
+}
+#create-building:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transition: .4s background;
 }
 * {
   box-sizing: border-box;

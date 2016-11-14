@@ -1,3 +1,48 @@
 #create-building {
     margin-top: -20px;
 }
+
+.modal-content {
+    background-color: #dedede;
+}
+
+.modal-header {
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+
+    .close { 
+
+        span {
+            font-size: 1.5em;
+        }
+    }
+}
+
+.modal-body {
+    text-align: center;
+    
+    input {
+        margin: 10px;     
+        border-radius: 5px;
+
+        &::-webkit-input-placeholder { 
+            color: #5b5b5b;
+            padding-left: 3px;
+            font-family: 'Cutive Mono', monospace;
+        }           
+    }
+}
+
+#create-building {
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Share Tech Mono', monospace;
+    width: 6em;
+    margin-right: 2em;
+    
+    &:hover {
+        background:rgba(0,0,0,0.5);
+        transition: .4s background; 
+    }
+}
