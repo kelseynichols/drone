@@ -57,6 +57,9 @@ angular.module('DroneApp.directives', [])
                     building.$save(function (success) {
                         console.log(success);
                     });
+
+                        location.reload();
+
                 }
 
             }]
@@ -142,6 +145,9 @@ angular.module('DroneApp.directives', [])
                     route.$save(function (success) {
                         console.log(success);
                     });
+
+                        location.reload();
+
                 }
                 var clearMarkers = function() {
                     markers.forEach(function(marker) {

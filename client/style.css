@@ -257,7 +257,6 @@ video {
 }
 .creator-container .user-creator .register-form .userinfo .confirm button {
   border-radius: 5px;
-  color: white;
   width: 9.5em;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -273,7 +272,6 @@ video {
 .creator-container .user-creator .register-form .userinfo a .confirm button {
   border: 1px solid white;
   border-radius: 5px;
-  color: white;
   width: 9.5em;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -426,7 +424,6 @@ h4 {
 }
 .creator-container .user-creator-login .login-form .userinfo .confirm button {
   border-radius: 5px;
-  color: white;
   width: 9.5em;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -673,6 +670,9 @@ iframe {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
+.account-body {
+  height: 100vh;
+}
 .account-body .buildings-container {
   color: #1b1b1b;
   margin-top: 8em;
@@ -703,6 +703,15 @@ iframe {
   -moz-box-shadow: 0 8px 6px -6px #9C9C9C;
   box-shadow: 10px 12px 6px -6px #9C9C9C;
   transition: 0.2s box-shadow;
+}
+.account-body .buildings-container .building-names .building-list .drone-pic {
+  background-image: url('../images/quadcopter_logo.png');
+  height: 3em;
+  width: 3em;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  margin: 0 auto;
 }
 .account-body .buildings-container .building-names .building-list .buildingz {
   color: white;
